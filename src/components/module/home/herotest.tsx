@@ -45,7 +45,7 @@ export default function HeroTest() {
 							exit={{ opacity: 0, height: 0 }}
 							className="mt-4"
 						>
-							<p className="text-muted-foreground">
+							<p className="">
 								Whether you&apos;re part of the local community, an employee, or
 								a government worker, our health plans are tailored to meet your
 								specific healthcare needs. For the Ethiopian Diaspora, we also
@@ -76,7 +76,7 @@ export default function HeroTest() {
 							exit={{ opacity: 0, height: 0 }}
 							className="mt-4"
 						>
-							<p className="text-muted-foreground">
+							<p className="">
 								<b className="text-primary font-bold">
 									Our Diaspora Health Plans
 								</b>
@@ -131,7 +131,7 @@ export default function HeroTest() {
 							exit={{ opacity: 0, height: 0 }}
 							className="mt-4"
 						>
-							<p className="text-muted-foreground">
+							<p className="">
 								Our plans offer a range of benefits to meet your specific needs,
 								including coverage for doctor visits, hospital stays,
 								prescription drugs, and more. We also offer flexible payment
@@ -162,7 +162,7 @@ export default function HeroTest() {
 							exit={{ opacity: 0, height: 0 }}
 							className="mt-4"
 						>
-							<p className="text-muted-foreground">
+							<p className="">
 								<b className="text-primary font-bold">
 									{" "}
 									Our International Health Plans{" "}
@@ -215,7 +215,7 @@ export default function HeroTest() {
 							exit={{ opacity: 0, height: 0 }}
 							className="mt-4"
 						>
-							<p className="text-muted-foreground">
+							<p className="">
 								Our NGO Health Plans offer a range of benefits to meet the
 								specific needs of NGO employees, including coverage for doctor
 								visits, hospital stays, prescription drugs, and more. We also
@@ -253,7 +253,7 @@ export default function HeroTest() {
 							exit={{ opacity: 0, height: 0 }}
 							className="mt-4"
 						>
-							<p className="text-muted-foreground">
+							<p className="">
 								Our Private Sector Plans offer a range of benefits to meet the
 								specific needs of private sector employees, including coverage
 								for doctor visits, hospital stays, prescription drugs, and more.
@@ -289,7 +289,7 @@ export default function HeroTest() {
 							exit={{ opacity: 0, height: 0 }}
 							className="mt-4"
 						>
-							<p className="text-muted-foreground">
+							<p className="">
 								Our FEP Plans offer a range of benefits to meet the specific
 								needs of federal employees, including coverage for doctor
 								visits, hospital stays, prescription drugs, and more. We also
@@ -331,7 +331,7 @@ export default function HeroTest() {
 
 				{/* Content Container */}
 				<div className="relative container mx-auto px-4 h-full">
-					<div className="grid lg:grid-cols-2 gap-8 h-full items-center py-20">
+					<div className="grid lg:grid-cols-2 gap-8 h-full items-center pb-20 pt-40">
 						<AnimatePresence mode="wait">
 							<motion.div
 								key={currentIndex}
@@ -342,7 +342,7 @@ export default function HeroTest() {
 								className="text-white space-y-6"
 							>
 								{/* Slide Counter */}
-								<div className="flex items-center space-x-4 text-white/60">
+								{/* <div className="flex items-center space-x-4 text-white/60">
 									<span className="text-xl font-medium">
 										{String(currentIndex + 1).padStart(2, "0")}
 									</span>
@@ -350,7 +350,7 @@ export default function HeroTest() {
 									<span className="text-xl">
 										{String(heroContent.length).padStart(2, "0")}
 									</span>
-								</div>
+								</div> */}
 
 								<motion.h1
 									className="text-5xl md:text-6xl lg:text-7xl font-bold"
@@ -371,7 +371,7 @@ export default function HeroTest() {
 								</motion.div>
 
 								<motion.div
-									className="flex items-center gap-4"
+									className="flex items-center gap-4 mb-10"
 									initial={{ opacity: 0, y: 20 }}
 									animate={{ opacity: 1, y: 0 }}
 									transition={{ delay: 0.4 }}

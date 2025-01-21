@@ -272,7 +272,7 @@ const TopNav = ({ className }: NavigationProps) => {
 								<DropdownMenuTrigger asChild>
 									<Button
 										variant={"outline"}
-										className="mr-10 lg:mr-0 gap-3 bg-primary text-white border-none"
+										className="mr-10 lg:mr-0 gap-3 bg-primary text-white border-none "
 									>
 										<LogIn className=" h-5 w-5 rotate-0 scale-100 transition-all dark:text-white text-white" />
 										<span className="sm:flex">Register</span>

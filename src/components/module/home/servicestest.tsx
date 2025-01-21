@@ -269,7 +269,7 @@ export default function HealthPlans() {
 					federal employees to individuals and families.
 				</p>
 			</motion.div>
-			<div className="grid gap-6 md:grid-cols-2 max-w-7xl mx-auto p-6">
+			<div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto p-6">
 				{healthPlansData.map((plan, index) => (
 					<Card className="hover:shadow-lg  border-4" key={index}>
 						<CardHeader className="space-y-4">

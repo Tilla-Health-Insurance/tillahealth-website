@@ -238,8 +238,11 @@ export default function PlanDetailScreen({ details }: PlanProps) {
 										variant="default"
 										size="lg"
 										className="bg-primary hover:bg-primary/90"
+										onClick={() =>
+											router.push("https://register.tillahealth.com/" as any)
+										}
 									>
-										GO TO MEMBER PORTAL
+										GO TO MEMBER REGISTRATION
 									</Button>
 								</div>
 							</Card>

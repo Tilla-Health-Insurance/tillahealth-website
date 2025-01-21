@@ -1,3 +1,5 @@
+import { useRouter } from "next/navigation";
+
 import {
 	Table,
 	TableBody,
@@ -6,6 +8,8 @@ import {
 	TableHeader,
 	TableRow,
 } from "@/components/ui/table";
+
+import { Button } from "../ui/button";
 
 interface TableType {
 	planTier: any;
@@ -24,6 +28,7 @@ interface dataProps {
 }
 
 const PlanTable = ({ table }: dataProps) => {
+	const router = useRouter();
 	return (
 		<section className="py-16 mb-20">
 			<div className="container">
@@ -100,6 +105,18 @@ const PlanTable = ({ table }: dataProps) => {
 							))}
 						</TableBody>
 					</Table>
+				</div>
+				<div className="text-center mt-8 items-center sm:items-center">
+					<Button
+						variant="default"
+						size="lg"
+						className="bg-primary hover:bg-primary/90"
+						onClick={() =>
+							router.push("https://register.tillahealth.com/" as any)
+						}
+					>
+						BECOME A MEMBER
+					</Button>
 				</div>
 			</div>
 		</section>

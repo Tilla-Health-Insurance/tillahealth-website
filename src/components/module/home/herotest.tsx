@@ -46,8 +46,8 @@ export default function HeroTest() {
 							className="mt-4"
 						>
 							<p className="text-muted-foreground">
-								Whether you're part of the local community, an employee, or a
-								government worker, our health plans are tailored to meet your
+								Whether you&apos;re part of the local community, an employee, or
+								a government worker, our health plans are tailored to meet your
 								specific healthcare needs. For the Ethiopian Diaspora, we also
 								offer health coverage plans that allow you to protect your loved
 								ones back home in Ethiopia, ensuring they have access to quality

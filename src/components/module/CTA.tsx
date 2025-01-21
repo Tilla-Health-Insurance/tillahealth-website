@@ -37,7 +37,7 @@ export default function CTA({
 									{line.split("[Register Here]")[0]}
 									<Link
 										href={`${registerLink}` as `/${string}`}
-										className="underline hover:text-secondary"
+										className="underline"
 									>
 										Register Here
 									</Link>

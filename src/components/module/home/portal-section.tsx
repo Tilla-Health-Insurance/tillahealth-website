@@ -62,19 +62,15 @@ function FeatureCard({
 					<h3 className="font-semibold text-primary text-center">{title}</h3>
 				</motion.div>
 				<AnimatePresence>
-					{isOpen && (
-						<motion.div
-							initial={{ opacity: 0, height: 0 }}
-							animate={{ opacity: 1, height: "auto" }}
-							exit={{ opacity: 0, height: 0 }}
-							transition={{ duration: 0.2 }}
-							className="overflow-hidden"
-						>
-							<p className="mt-4 text-sm text-muted-foreground">
-								{description}
-							</p>
-						</motion.div>
-					)}
+					<motion.div
+						initial={{ opacity: 0, height: 0 }}
+						animate={{ opacity: 1, height: "auto" }}
+						exit={{ opacity: 0, height: 0 }}
+						transition={{ duration: 0.2 }}
+						className="overflow-hidden"
+					>
+						<p className="mt-4 text-sm text-muted-foreground">{description}</p>
+					</motion.div>
 				</AnimatePresence>
 			</motion.button>
 		</motion.div>
@@ -110,7 +106,7 @@ export function PortalsSection() {
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.5 }}
 							className={cn(
-								"hidden md:grid  gap-4 md:grid-cols-3 lg:grid-cols-3 container md:absolute md:-bottom-14 z-10"
+								"hidden md:grid  gap-4 md:grid-cols-3 lg:grid-cols-3 container md:absolute md:-bottom-20 z-10"
 								// isOpen && "-bottom-10"
 							)}
 						>

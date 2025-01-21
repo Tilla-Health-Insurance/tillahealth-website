@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function TextSection() {
 	return (
-		<section className="relative w-full overflow-hidden bg-muted/50  py-24 lg:py-32">
+		<section className="relative w-full overflow-hidden py-20 lg:py-20">
 			{/* <div className="absolute inset-0 bg-grid-slate-100 bg-opacity-30 bg-[size:60px_60px]" /> */}
 			{/* <div
 				className="absolute inset-y-0 right-0 w-[300px] bg-gradient-to-l from-primary/10 to-transparent"

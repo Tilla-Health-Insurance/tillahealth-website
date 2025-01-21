@@ -109,14 +109,12 @@ export default function ServicesScreen() {
 				<BlogsSection />
 				<CTA
 					text="Choose Your Plan Types"
-					link="https://member.tillahealth.com/"
+					link="https://register.tillahealth.com/"
 					description={[
-						// "Our Provider Portal is a secure, all-in-one platform to manage your interactions with Tilla Health.",
-						// "Joining the Provider Portal is easy.",
-						"If you're a new member [Register Here], complete the form with your details, and create your secure login.",
-						"If you are an existing member with a registered portal account, please click here",
+						"If you're a new member , complete the form with your details, and create your secure login.",
+						// "If you are an existing member with a registered portal account, please click here",
 					]}
-					btnText="Launch the Portal"
+					btnText="Register Here!!"
 					registerLink="https://register.tillahealth.com/"
 				/>
 			</div>

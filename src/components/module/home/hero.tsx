@@ -330,7 +330,7 @@ export default function Hero() {
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 0.5 }}
-				className={`relative ${isOpen ? "md:h-[80vh]" : "md:h-[40vh]"} md:h-[50vh] border-b-2 p-2 mb-4 bg-muted`} // Fixed heights for different screen sizes
+				className={`relative ${isOpen ? "md:h-[80vh]" : "md:h-[40vh]"}   border-b-2 p-2 mb-4 bg-muted`} // Fixed heights for different screen sizes
 			>
 				{/* Content Container */}
 				<div className="relative h-full flex items-center text-center">

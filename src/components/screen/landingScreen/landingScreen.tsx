@@ -119,27 +119,31 @@ export default function HomeScreen() {
 			<div className="relative z-10">
 				{/* Hero Section */}
 				<Hero />
+				{/* <HeroCarousel/> */}
 				<PartnerSlider partners={partner} />
+
 				<TextSection />
-				<PortalsSection />
-				<InnovationsSection />
-				<BenefitsSection />
-				<News />
 				{/* About Section */}
 				<AboutSection />
+
+				<InnovationsSection />
+
+				<BenefitsSection />
+				<PortalsSection />
 				{/* Services Section */}
 				<HealthPlans />
 				<BlogsSection />
+				<News />
 				{/* Why Choose Section */}
 				{/* <Features /> */}
 				<CTA
 					text="Choose Your Plan Types"
-					link="https://member.tillahealth.com/"
+					link="https://register.tillahealth.com/"
 					description={[
-						"If you're a new member [Register Here], complete the form with your details, and create your secure login.",
-						"If you are an existing member with a registered portal account, please click here",
+						"If you're a new member , complete the form with your details, and create your secure login.",
+						// "If you are an existing member with a registered portal account, please click here",
 					]}
-					btnText="Launch the Portal"
+					btnText="Register Here!!"
 					registerLink="https://register.tillahealth.com/"
 				/>
 			</div>

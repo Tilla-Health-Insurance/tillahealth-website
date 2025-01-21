@@ -32,7 +32,7 @@ export default function PlanScreen({ plan }: PlanProps) {
 	const features = [
 		{
 			icon: FileEdit,
-			title: "Get a Quote",
+			title: "What We Offer",
 			description:
 				"Health plans designed to meet the needs of families, individuals, employees, and organizations.",
 			href: `${plan.quoteLnk}`,

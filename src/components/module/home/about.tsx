@@ -15,7 +15,7 @@ export function AboutSection() {
 			initial={{ opacity: 0, y: 20 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true }}
-			className="relative py-20 md:py-40 max-h-screen bg-[#CC1D48] text-white"
+			className="relative py-20 md:py-40 max-h-screen bg-[#CC1D48] text-white overflow-hidden"
 		>
 			<div className="absolute inset-0">
 				<Image
@@ -25,28 +25,29 @@ export function AboutSection() {
 					className="object-cover brightness-50"
 					priority
 				/>
+				{/* <div className="absolute inset-0 bg-gradient-to-t from-red-600 to-transparent" /> */}
 			</div>
 			<div className="relative mx-auto px-4">
 				<div className="max-w-3xl p-6 mb-10 lg:mb-0 lg:mr-10">
-					<h2 className="text-xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+					<h2 className="text-3xl md:text-6xl font-extrabold mb-6 drop-shadow-lg">
 						ABOUT US
 					</h2>
-					<h3 className="md:text-2xl mb-4 font-semibold">
+					<h3 className="md:text-3xl mb-4 font-semibold">
 						Get to know Tilla Health
 					</h3>
 					<p className="mb-4 md:text-lg leading-relaxed">
 						We are committed to making health care insurance easy, affordable,
 						and attainable for all.
 					</p>
-					<p className="md:text-lg leading-relaxed">
+					<p className="md:text-lg leading-relaxed mb-4">
 						At Tilla Health, we are driven by purpose and dedicated to making it
 						simple and seamless to guide and inspire you in obtaining the health
 						insurance and quality care you deserve.
 					</p>
 					<Button
 						variant="outline"
-						size="sm"
-						className="text-primary mt-3"
+						size="lg" // Increased button size for better visibility
+						className="text-primary border-2 border-white hover:bg-white hover:text-[#CC1D48] transition-all duration-300 mt-3"
 						onClick={() => router.push("/who-we-are" as any)}
 					>
 						Read More

@@ -176,7 +176,7 @@ const plans: Record<PlanKey, Plan> = {
 								].map((item, index) => (
 									<Card
 										key={index}
-										className="border-none bg-white shadow-md p-4"
+										className="border-none bg-card shadow-md p-4"
 									>
 										<div className="flex items-start gap-3">
 											<CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-1" />
@@ -223,7 +223,7 @@ const plans: Record<PlanKey, Plan> = {
 								].map((item, index) => (
 									<Card
 										key={index}
-										className="border-none bg-white shadow-md p-4"
+										className="border-none bg-card shadow-md p-4"
 									>
 										<div className="flex items-start gap-3">
 											<CheckCircle className="h-5 w-5 text-primary flex-shrink-0 mt-1" />

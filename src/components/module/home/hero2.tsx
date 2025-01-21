@@ -275,7 +275,7 @@ export default function Hero2() {
 	}, [currentIndex]);
 
 	return (
-		<div className="min-h-screen bg-muted">
+		<div className="min-h-screen bg-muted/50">
 			{/* Text Section */}
 			<section className="relative pt-16 pb-5 ">
 				<div className="container mx-auto px-4">

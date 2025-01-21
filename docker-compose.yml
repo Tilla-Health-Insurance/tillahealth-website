@@ -1,0 +1,12 @@
+version: "3.6"
+services:
+  web:
+    restart: unless-stopped
+    build:
+      context: .
+
+    ports:
+      - "3002:3000"
+
+    env_file:
+      - .env

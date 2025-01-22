@@ -22,7 +22,7 @@ import { BenefitsSection } from "@/components/module/home/benefits";
 import Hero from "@/components/module/home/hero";
 import Hero2 from "@/components/module/home/hero2";
 import HeroCarousel from "@/components/module/home/herokal";
-import HeroTest from "@/components/module/home/herotest";
+// import HeroTest from "@/components/module/home/herotest";
 import { InnovationsSection } from "@/components/module/home/innovations";
 import { PortalsSection } from "@/components/module/home/portal-section";
 import HealthPlans from "@/components/module/home/servicestest";

@@ -15,7 +15,7 @@ export function AboutSection() {
 			initial={{ opacity: 0, y: 20 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			viewport={{ once: true }}
-			className="relative py-20 md:py-40 max-h-screen bg-[#CC1D48] text-white overflow-hidden"
+			className="relative py-20 md:py-40 max-h-screen bg-[hsl(351,84%,45%)] text-white overflow-hidden"
 		>
 			<div className="absolute inset-0">
 				<Image
@@ -29,9 +29,9 @@ export function AboutSection() {
 			</div>
 			<div className="relative mx-auto px-4">
 				<div className="max-w-3xl p-6 mb-10 lg:mb-0 lg:mr-10">
-					<h2 className="text-3xl md:text-6xl font-extrabold mb-6 drop-shadow-lg">
-						ABOUT US
-					</h2>
+					<h3 className="text-sm font-semibold text-primary mb-4">
+						{">>"} About Us {"<<"}
+					</h3>
 					<h3 className="md:text-3xl mb-4 font-semibold">
 						Get to know Tilla Health
 					</h3>

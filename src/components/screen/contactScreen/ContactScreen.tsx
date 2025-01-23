@@ -197,7 +197,7 @@ export default function ContactScreen() {
 
 								<Button
 									type="submit"
-									className="w-full"
+									className="w-full hover:bg-primary"
 									disabled={isSubmitting}
 								>
 									{isSubmitting ? "Submitting..." : "Send Message"}

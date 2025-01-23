@@ -175,7 +175,10 @@ const TopNav = ({ className }: NavigationProps) => {
 			<div className="grid gap-4 p-4 border-t bg-card">
 				<DropdownMenu>
 					<DropdownMenuTrigger asChild>
-						<Button variant={"default"} className="h-10 w-60 gap-3 rounded-xl">
+						<Button
+							variant={"default"}
+							className="hover:bg-primary h-10 w-60 gap-3 rounded-xl"
+						>
 							<span className="sm:flex">Register</span>
 							<ChevronDown className="h-3 w-3" />
 						</Button>
@@ -230,13 +233,13 @@ const TopNav = ({ className }: NavigationProps) => {
 		</nav>
 	);
 	return (
-		<nav className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 w-full">
+		<nav className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 w-full ">
 			<Image
 				src={IMAGES.redLogo}
 				width={120}
 				height={60}
 				alt={"logo"}
-				className="absolute left-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
+				className="absolute left-7 top-1/2 transform -translate-y-1/2 cursor-pointer"
 				onClick={() => route.push("/home")}
 			/>
 			<div className="mx-auto px-4 py-1 sm:px-6 lg:px-8 ">

@@ -10,6 +10,8 @@ import {
 	Home,
 	Luggage,
 	Newspaper,
+	Stethoscope,
+	User,
 	User2,
 	Users,
 } from "lucide-react";
@@ -321,5 +323,10 @@ export const menuItems = [
 				learnMoreLabel: "Subscribe Now",
 			},
 		},
+	},
+	{
+		title: "Find A Provider",
+		icon: Stethoscope,
+		href: "/find-a-provider", // Add direct href for Home
 	},
 ];

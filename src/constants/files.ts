@@ -1,10 +1,18 @@
+import cureHospital from "../../public/images/Cure.jpeg";
+import interHero from "../../public/images/Diverse Friends Gathering.jpeg";
 import familyHero from "../../public/images/FamilyHero.png";
 import feredalHero from "../../public/images/FederalHero.jpeg";
-import interHero from "../../public/images/InternationalHero.jpg";
-import ngoHero from "../../public/images/NgoHero.jpg";
+import cardback from "../../public/images/ID-new-logo-back.png";
+import cadfront from "../../public/images/ID-new-logo-front.png";
+import nordicHospital from "../../public/images/Nordic.jpeg";
 import privateHero from "../../public/images/PrivateHero.png";
+import ngoHero from "../../public/images/WhatsApp Image 2025-01-23 at 9.50.34 AM.jpeg";
+import abayHospital from "../../public/images/abay.jpeg";
 import blackLion from "../../public/images/blackLion.png";
 import logoredtransparent from "../../public/images/bold-logo.png";
+import brokerportal from "../../public/images/brokerportal.jpeg";
+import careLandHospital from "../../public/images/careland.jpeg";
+import companyportal from "../../public/images/company-portal.png";
 import diasporaHero2 from "../../public/images/diasporaHero.jpg";
 import diaspora from "../../public/images/diasporaOne.png";
 import diasporaconnect1 from "../../public/images/diasporaconnect1.jpg";
@@ -14,8 +22,12 @@ import member3 from "../../public/images/falily.png";
 import family from "../../public/images/familyOne.png";
 import federal from "../../public/images/gov.png";
 import heroBackground from "../../public/images/heroBackground.jpg";
+import memberCard from "../../public/images/id mocap (2).png";
+import individual from "../../public/images/individual.jpeg";
 import internationalGlob from "../../public/images/internationalGlobe.png";
 import logobluetransparent from "../../public/images/logo-blue.png";
+import logoredicon from "../../public/images/logo-icon.png";
+import memberportal from "../../public/images/memberportal.jpeg";
 import mohLogo from "../../public/images/moh.png";
 import bg from "../../public/images/new.png";
 import news2 from "../../public/images/news2.jpeg";
@@ -28,18 +40,19 @@ import ngo from "../../public/images/ngoOne.png";
 import oldpeople from "../../public/images/oldpeople.jpg";
 import socialres4 from "../../public/images/oldperon.jpeg";
 import paulosLog from "../../public/images/paulos.png";
+import mobile from "../../public/images/phone-1.png";
 import portal from "../../public/images/portal.jpeg";
 import privateSector from "../../public/images/private_sector.png";
+import providerportal from "../../public/images/providerportal.jpeg";
 import redCrossLog from "../../public/images/redcross.png";
+import semahHospital from "../../public/images/semah.jpeg";
 import socialres2 from "../../public/images/socialres2.jpg";
 import socialres3 from "../../public/images/socialres.png";
 import telehealth from "../../public/images/telehealth.jpeg";
-import memberCard from "../../public/images/tilla-member-id-website.png";
 import transport2 from "../../public/images/transport2.jpg";
 import transport from "../../public/images/transport.jpeg";
 import whoLogo from "../../public/images/who.png";
 import whytilla from "../../public/images/whytilla.jpeg";
-import individual from "../../public/images/woman.png";
 import bg2 from "../../public/images/young-handsome-physician-medical-robe-with-stethoscope.jpg";
 
 export const DOCS = Object.freeze({
@@ -90,4 +103,17 @@ export const IMAGES = Object.freeze({
 	internationalGlob: internationalGlob,
 	individual: individual,
 	portal: portal,
+	memberportal: memberportal,
+	providerportal: providerportal,
+	brokerportal: brokerportal,
+	companyportal: companyportal,
+	cadfront: cadfront,
+	cardback: cardback,
+	mobile: mobile,
+	logoredicon: logoredicon,
+	nordicHospital: nordicHospital,
+	abayHospital: abayHospital,
+	careLandHospital: careLandHospital,
+	cureHospital: cureHospital,
+	semahHospital: semahHospital,
 });

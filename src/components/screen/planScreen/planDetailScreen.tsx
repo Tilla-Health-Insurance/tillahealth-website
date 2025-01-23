@@ -200,6 +200,7 @@ export default function PlanDetailScreen({ details }: PlanProps) {
 												onClick={() =>
 													router.push("/plan/details/diaspora-benefits" as any)
 												}
+												className="hover:bg-primary"
 											>
 												BENEFIT AT A GLANCE
 											</Button>
@@ -207,6 +208,7 @@ export default function PlanDetailScreen({ details }: PlanProps) {
 												variant="default"
 												size="lg"
 												onClick={() => router.push("/plan/wellness" as any)}
+												className="hover:bg-primary"
 											>
 												WELLNESS CHECKUP PACKAGE
 											</Button>
@@ -233,11 +235,11 @@ export default function PlanDetailScreen({ details }: PlanProps) {
 									process, flexible payment options, and immediate access to our
 									comprehensive network of healthcare providers.
 								</p>
-								<div className="text-center mt-8 items-center sm:items-center">
+								<div className="flex justify-center mt-8">
 									<Button
 										variant="default"
 										size="lg"
-										className="bg-primary hover:bg-primary/90"
+										className="bg-primary hover:bg-primary text-center px-6 py-3 text-sm md:text-base rounded-md transition-all duration-300"
 										onClick={() =>
 											router.push("https://register.tillahealth.com/" as any)
 										}

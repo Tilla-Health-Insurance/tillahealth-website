@@ -17,7 +17,10 @@ export default function TextSection() {
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5 }}
 					>
-						<h1 className="text-primary text-xl font-bold tracking-tight md:text-3xl ">
+						<h3 className="text-sm font-semibold text-primary mb-4">
+							{">>"} Our Company {"<<"}
+						</h3>
+						<h1 className="text-xl font-bold tracking-tight md:text-3xl ">
 							Revolutionizing Healthcare in Ethiopia with Tilla Health
 						</h1>
 					</motion.div>

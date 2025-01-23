@@ -252,18 +252,18 @@ export default function Hero() {
 				{/* Background Image Container */}
 				<div className="absolute inset-0">
 					{/* Desktop Image */}
-					{/* <div className="hidden md:block w-full h-full"> */}
-					<div className="relative w-full h-[60vh] overflow-hidden">
-						<Image
-							src={heroContent[currentIndex].image}
-							alt="Hero Background"
-							fill
-							className="object-cover brightness-50"
-							priority
-							sizes="100vw"
-						/>
+					<div className="hidden md:block w-full h-full">
+						<div className="relative w-full h-[60vh] overflow-hidden">
+							<Image
+								src={heroContent[currentIndex].image}
+								alt="Hero Background"
+								fill
+								className="object-cover brightness-50"
+								priority
+								sizes="100vw"
+							/>
+						</div>
 					</div>
-					{/* </div> */}
 					{/* Mobile Image */}
 					<div className="block md:hidden w-full h-full">
 						<Image

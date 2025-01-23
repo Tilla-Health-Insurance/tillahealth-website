@@ -36,6 +36,9 @@ export function WhyChooseSection() {
 					viewport={{ once: true }}
 					className="text-center mb-12"
 				>
+					<h3 className="text-sm font-semibold text-primary mb-4">
+						{">>"} Why Choose US {"<<"}
+					</h3>
 					<h2 className="text-4xl font-bold mb-6">Why Choose Tilla Health?</h2>
 					<p className="max-w-3xl mx-auto text-gray-600">
 						Whether you&apos;re a federal employee, NGO worker, or a family

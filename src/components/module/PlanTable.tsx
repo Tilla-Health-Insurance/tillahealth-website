@@ -110,7 +110,7 @@ const PlanTable = ({ table }: dataProps) => {
 					<Button
 						variant="default"
 						size="lg"
-						className="bg-primary hover:bg-primary/90"
+						className="bg-primary hover:bg-primary"
 						onClick={() =>
 							router.push("https://register.tillahealth.com/" as any)
 						}

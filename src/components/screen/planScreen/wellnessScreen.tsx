@@ -147,7 +147,7 @@ export default function WellnessPage() {
 					</div>
 					<div className="text-center mt-8">
 						<Button
-							className="bg-[#C8102E] hover:bg-[#A00D24] text-white px-8 py-3 rounded"
+							className="bg-primary hover:bg-[#A00D24] text-white px-8 py-3 rounded"
 							onClick={() => window.open("https://member.tillahealth.com/")}
 						>
 							GO TO MEMBER PORTAL

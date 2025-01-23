@@ -56,20 +56,23 @@ export default function PlanScreen({ plan }: PlanProps) {
 		<div className="min-h-screen flex flex-col">
 			<main>
 				<section className="relative bg-primary text-white">
-					<div className="container grid md:grid-cols-2 gap-8 py-16 items-center">
-						<div className="space-y-6">
-							<h1 className="text-5xl font-bold tracking-tight">
+					<div className="container mx-auto grid md:grid-cols-2 gap-8 py-12 px-4 md:px-8 items-center">
+						<div className="space-y-4 md:space-y-6">
+							<h1 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
 								{plan.title}
 							</h1>
-							<p className="text-lg">{plan.description}</p>
+							<p className="text-base md:text-lg text-gray-200">
+								{plan.description}
+							</p>
 						</div>
-						<div className="relative h-[400px]">
+						<div className="relative h-[250px] md:h-[350px] overflow-hidden rounded-md shadow-md">
 							<Image
 								src={plan.image}
 								alt="World Flags"
 								fill
-								className="object-cover rounded-lg"
+								className="object-cover"
 							/>
+							<div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-transparent pointer-events-none rounded-md"></div>
 						</div>
 					</div>
 				</section>

@@ -341,7 +341,7 @@ const plans: Record<PlanKey, Plan> = {
 			"At Diaspora Health Connect, we understand the concerns expatriates have about the well-being of their loved ones living in Ethiopia. Our Diaspora Health Plan is specifically crafted to provide peace of mind by ensuring family members, whether they are elderly parents, children, or spouses, have access to high-quality healthcare services in Ethiopia.",
 		],
 		image: IMAGES.interHero,
-		image2: IMAGES.diasporahero,
+		image2: IMAGES.internationalGlob,
 		quoteLnk: "/plan/details/our-health-insurance-plan-int",
 	},
 };

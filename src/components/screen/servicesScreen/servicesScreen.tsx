@@ -106,7 +106,9 @@ export default function ServicesScreen() {
 					haveReadMore={true}
 				/>
 				{/* Transport Section */}
-				<BlogsSection />
+				<div id="target-section">
+					<BlogsSection />
+				</div>
 				<CTA
 					text="Choose Your Plan Types"
 					link="https://register.tillahealth.com/"

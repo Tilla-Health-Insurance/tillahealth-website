@@ -73,12 +73,15 @@ export function BenefitsSection() {
 	return (
 		<section className="py-24 bg-background">
 			<div className="container px-4 md:px-6">
+				<h3 className="text-sm font-semibold text-primary mb-4 text-center">
+					{">>"} Why Choose Us {"<<"}
+				</h3>
 				<SectionHeading
 					title="Why Choose Tilla Health"
 					description="Transforming healthcare delivery with innovation and accessibility"
 					className="text-center mb-12"
 				/>
-				<div className="grid gap-6 grid-cols-2 lg:grid-cols-3">
+				<div className="grid gap-6 grid-cols-1 lg:grid-cols-3 md:max-w-6xl mx-auto">
 					{benefits.map((benefit) => (
 						<Card
 							key={benefit.title}
@@ -86,7 +89,7 @@ export function BenefitsSection() {
 						>
 							<CardContent className="p-6">
 								<div className="md:flex gap-4">
-									<div className="my-4 rounded-full p-2 bg-primary shadow-md">
+									<div className="my-4  rounded-2xl p-2 bg-primary shadow-md">
 										<benefit.icon className="w-6 h-6 text-card" />
 									</div>
 									<div>

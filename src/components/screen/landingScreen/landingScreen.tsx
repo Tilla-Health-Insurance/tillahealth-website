@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 import { motion } from "framer-motion";
 import {
 	Building,
@@ -15,15 +13,15 @@ import {
 
 import CTA from "@/components/module/CTA";
 import { PartnerSlider } from "@/components/module/PartnerSlider";
-import { BlogsSection } from "@/components/module/home/Blogs";
 import News from "@/components/module/home/News";
 import { AboutSection } from "@/components/module/home/about";
+// import MemberCardSection from "@/components/module/home/member-card";
+import AdditionalServicesSection from "@/components/module/home/addtional-section";
 import { BenefitsSection } from "@/components/module/home/benefits";
-import Hero from "@/components/module/home/hero";
-import Hero2 from "@/components/module/home/hero2";
-import HeroCarousel from "@/components/module/home/herokal";
 // import HeroTest from "@/components/module/home/herotest";
+import HeroSlider from "@/components/module/home/herotest";
 import { InnovationsSection } from "@/components/module/home/innovations";
+import MobileAppSection from "@/components/module/home/mobile-app";
 import { PortalsSection } from "@/components/module/home/portal-section";
 import HealthPlans from "@/components/module/home/servicestest";
 import TextSection from "@/components/module/home/text-section";
@@ -108,13 +106,13 @@ export default function HomeScreen() {
 					ease: "linear",
 				}}
 			>
-				<Image
+				{/* <Image
 					src={IMAGES.bg}
 					alt="Background"
 					fill
 					className="object-cover"
 					priority
-				/>
+				/> */}
 				<div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/80 to-background/95" />
 			</motion.div>
 
@@ -122,22 +120,27 @@ export default function HomeScreen() {
 			<div className="relative z-10">
 				{/* Hero Section */}
 				{/* <Hero2 /> */}
-				<Hero />
-				{/* <HeroTest/> */}
+				{/* <Hero /> */}
+				<HeroSlider />
 				{/* <HeroCarousel/> */}
 				<PartnerSlider partners={partner} />
 
 				<TextSection />
 				{/* About Section */}
-				<AboutSection />
 
+				<AboutSection />
+				{/* <AboutUsSection/> */}
 				<InnovationsSection />
 
 				<BenefitsSection />
+				{/* <MemberCardSection /> */}
 				<PortalsSection />
 				{/* Services Section */}
 				<HealthPlans />
-				<BlogsSection />
+				{/* <ServicesTestSection/> */}
+				<AdditionalServicesSection />
+				{/* <BlogsSection /> */}
+				<MobileAppSection />
 				<News />
 				{/* Why Choose Section */}
 				{/* <Features /> */}

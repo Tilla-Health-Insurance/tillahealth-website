@@ -1,13 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
 import { motion } from "framer-motion";
+import { Heart, User2 } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { IMAGES } from "@/constants/files";
+
+import { HealthPlanCard } from "./health-plan-card";
 
 // Adjust the path based on your project structure
 const healthPlansData = [
@@ -50,7 +50,8 @@ const healthPlansData = [
 				</ul>
 			</>
 		),
-		image: IMAGES.diaspora, // Update to your actual image path
+		image: IMAGES.diasporahero, // Update to your actual image path
+		icon: Heart,
 	},
 	{
 		title: "Family Health Plan",
@@ -87,7 +88,8 @@ const healthPlansData = [
 				</ul>
 			</>
 		),
-		image: IMAGES.family, // Update to your actual image path
+		image: IMAGES.familyhero,
+		icon: Heart,
 	},
 	{
 		title: "Individual Health Plan",
@@ -119,7 +121,8 @@ const healthPlansData = [
 				</ul>
 			</>
 		),
-		image: IMAGES.individual, // Update to your actual image path
+		image: IMAGES.individual,
+		icon: Heart,
 	},
 	{
 		title: "International Health Plan",
@@ -148,7 +151,8 @@ const healthPlansData = [
 				</ul>
 			</>
 		),
-		image: IMAGES.internationalGlob, // Update to your actual image path
+		image: IMAGES.interHero,
+		icon: Heart,
 	},
 	{
 		title: "NGO Health Plan",
@@ -179,7 +183,8 @@ const healthPlansData = [
 				</ul>
 			</>
 		),
-		image: IMAGES.ngo, // Update to your actual image path
+		image: IMAGES.ngohero,
+		icon: Heart,
 	},
 	{
 		title: "Private Sector Health Plan",
@@ -211,7 +216,8 @@ const healthPlansData = [
 				</ul>
 			</>
 		),
-		image: IMAGES.privateSector, // Update to your actual image path
+		image: IMAGES.privateHero,
+		icon: Heart,
 	},
 	{
 		title: "Federal Employee Program (FEP)",
@@ -243,7 +249,8 @@ const healthPlansData = [
 				</ul>
 			</>
 		),
-		image: IMAGES.federal, // Update to your actual image path
+		image: IMAGES.feredalHero,
+		icon: Heart,
 	},
 ];
 export default function HealthPlans() {
@@ -254,13 +261,16 @@ export default function HealthPlans() {
 	};
 
 	return (
-		<div className="py-20 relative">
+		<div className="py-20 relative ">
 			<motion.div
 				initial={{ opacity: 0, y: 20 }}
 				whileInView={{ opacity: 1, y: 0 }}
 				viewport={{ once: true }}
-				className="text-center mb-12"
+				className="text-center mb-12 container"
 			>
+				<h3 className="text-sm font-semibold text-primary mb-4">
+					{">>"} Our Top Services {"<<"}
+				</h3>
 				<h2 className="text-4xl font-bold mb-6">Tilla Health Services</h2>
 				<p className="max-w-3xl mx-auto text-gray-600">
 					Tilla Health offers a comprehensive range of healthcare plans to cater
@@ -269,51 +279,65 @@ export default function HealthPlans() {
 					federal employees to individuals and families.
 				</p>
 			</motion.div>
-			<div className="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto p-6">
+			<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto container">
 				{healthPlansData.map((plan, index) => (
-					<Card className="hover:shadow-lg  border-4" key={index}>
-						<CardHeader className="space-y-4">
-							<motion.div initial={{ scale: 1 }} whileHover={{ scale: 1.1 }}>
-								<div className="w-12 h-12 flex items-center justify-center">
-									<Image
-										src={plan.image as any}
-										alt={plan.title}
-										className="w-8 h-8"
-									/>
-									{/* Replace icon with image */}
-								</div>
-							</motion.div>
-							<CardTitle className="text-xl font-bold">{plan.title}</CardTitle>
-						</CardHeader>
-						<CardContent className="space-y-4">
-							<p className="text-gray-600">{plan.description}</p>
-							<div className="space-y-4">
-								<Button
-									variant="ghost"
-									className="w-full flex items-center justify-between text-primary border-2"
-									onClick={() => handleCardClick(index)}
-								>
-									Read More
-									<span className="ml-2">
-										{expandedIndex === index ? "−" : "+"}
-									</span>
-								</Button>
-								{expandedIndex === index && (
-									<div className="space-y-4 pt-4">
-										<div>
-											<h3 className="font-semibold mb-2">Eligibility:</h3>
-											<p className="text-gray-600">{plan.eligibility}</p>
-										</div>
-										<div>
-											<h3 className="font-semibold mb-2">Key Features:</h3>
-											<p className="text-gray-600">{plan.features}</p>
-										</div>
-									</div>
-								)}
-							</div>
-						</CardContent>
-					</Card>
+					<HealthPlanCard
+						key={index}
+						plan={plan}
+						isExpanded={expandedIndex === index}
+						onToggle={() => handleCardClick(index)}
+						className={
+							healthPlansData.length % 3 !== 0 &&
+							index === healthPlansData.length - 1 &&
+							index >= 3
+								? "md:col-span-2 lg:col-span-3"
+								: ""
+						}
+					/>
+					// <Card className="hover:shadow-lg" key={index}>
+					// 	<CardHeader className="space-y-4">
+					// 		<motion.div initial={{ scale: 1 }} whileHover={{ scale: 1.1 }}>
+					// 			<div className="w-12 h-12 flex items-center justify-center">
+					// 				<Image
+					// 					src={plan.image as any}
+					// 					alt={plan.title}
+					// 					className="w-8 h-8"
+					// 				/>
+					// 				{/* Replace icon with image */}
+					// 			</div>
+					// 		</motion.div>
+					// 		<CardTitle className="text-xl font-bold">{plan.title}</CardTitle>
+					// 	</CardHeader>
+					// 	<CardContent className="space-y-4">
+					// 		<p className="text-gray-600">{plan.description}</p>
+					// 		<div className="space-y-4">
+					// 			<Button
+					// 				variant="ghost"
+					// 				className="w-full flex items-center justify-between text-primary border-2"
+					// 				onClick={() => handleCardClick(index)}
+					// 			>
+					// 				Read More
+					// 				<span className="ml-2">
+					// 					{expandedIndex === index ? "−" : "+"}
+					// 				</span>
+					// 			</Button>
+					// 			{expandedIndex === index && (
+					// 				<div className="space-y-4 pt-4">
+					// 					<div>
+					// 						<h3 className="font-semibold mb-2">Eligibility:</h3>
+					// 						<p className="text-gray-600">{plan.eligibility}</p>
+					// 					</div>
+					// 					<div>
+					// 						<h3 className="font-semibold mb-2">Key Features:</h3>
+					// 						<p className="text-gray-600">{plan.features}</p>
+					// 					</div>
+					// 				</div>
+					// 			)}
+					// 		</div>
+					// 	</CardContent>
+					// </Card>
 				))}
+				{/* Add filler divs if the items are not divisible by 4 */}
 			</div>
 		</div>
 	);

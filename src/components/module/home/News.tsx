@@ -37,7 +37,7 @@ export default function NewsPage() {
 								))}
 						</div>
 					</Suspense>
-					<div className="text-center max-w-3xl mx-auto mt-6">
+					<div className="text-center max-w-3xl container mx-auto mt-6">
 						<Button
 							size="lg"
 							variant="default"

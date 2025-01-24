@@ -35,7 +35,7 @@ const PlanTable = ({ table }: dataProps) => {
 				<h2 className="text-3xl font-bold text-center mb-12">
 					CHOOSE YOUR PLAN TYPES
 				</h2>
-				<div className="overflow-x-auto bg-white rounded-lg shadow-sm">
+				<div className="overflow-x-auto bg-background rounded-lg shadow-sm">
 					<Table>
 						<TableHeader>
 							<TableRow className="bg-primary hover:bg-black transition-colors">

@@ -53,7 +53,9 @@ export function ServicesSection({
 									<h3 className="text-xl font-semibold mb-4">
 										{service.title}
 									</h3>
-									<p className="text-gray-600 mb-4">{service.description}</p>
+									<p className="text-muted-foreground  mb-4">
+										{service.description}
+									</p>
 									{haveReadMore && (
 										<Link
 											href={service.href as any}

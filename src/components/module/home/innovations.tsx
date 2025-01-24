@@ -41,7 +41,7 @@ export function InnovationsSection() {
 					{innovations.map((item) => (
 						<div
 							key={item.title}
-							className="group relative flex flex-col items-center text-center p-8 rounded-lg shadow-lg 
+							className="group relative flex flex-col items-center text-center p-8 rounded-full shadow-lg 
                bg-gradient-to-b from-blue-50 via-white to-gray-50 
                dark:bg-gradient-to-b dark:from-muted dark:via-gray-700 dark:to-gray-900 
                transition duration-300"
@@ -55,7 +55,7 @@ export function InnovationsSection() {
 							<p className="mt-2 text-sm text-muted-foreground  transition duration-300">
 								{item.description}
 							</p>
-							<div className="absolute inset-0 opacity-0 group-hover:opacity-5 rounded-lg bg-primary transition duration-300" />
+							<div className="absolute inset-0 opacity-0 group-hover:opacity-5 rounded-full bg-primary transition duration-300" />
 						</div>
 					))}
 				</div>

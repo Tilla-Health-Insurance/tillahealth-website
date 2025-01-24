@@ -17,7 +17,7 @@ export default function AdditionalServicesSection() {
 					{">>"} Our Comprehensive Services {"<<"}
 				</h3>
 				<h2 className="text-4xl font-bold mb-6">Additional Services</h2>
-				<p className="max-w-3xl mx-auto text-gray-600">
+				<p className="max-w-3xl mx-auto text-muted-foreground ">
 					Our Additional Services section is designed to enhance your experience
 					and provide comprehensive support tailored to your needs.
 				</p>

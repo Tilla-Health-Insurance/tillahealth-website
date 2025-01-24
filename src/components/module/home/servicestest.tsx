@@ -272,7 +272,7 @@ export default function HealthPlans() {
 					{">>"} Our Top Services {"<<"}
 				</h3>
 				<h2 className="text-4xl font-bold mb-6">Tilla Health Services</h2>
-				<p className="max-w-3xl mx-auto text-gray-600">
+				<p className="max-w-3xl mx-auto text-muted-foreground ">
 					Tilla Health offers a comprehensive range of healthcare plans to cater
 					to various sectors and needs. Our services are designed to provide
 					flexible, affordable, and accessible healthcare to everyone from

@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
 	BriefcaseMedical,
@@ -41,6 +41,26 @@ const TopNav = ({ className }: NavigationProps) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 	const [openSublinks, setOpenSublinks] = useState<number[]>([]);
 	const [openSectionIndex, setOpenSectionIndex] = useState<number | null>(null);
+	const [logo, setLogo] = useState(IMAGES.redLogo);
+	const [logoWidth, setLogoWidth] = useState(120); // Default width for large logo
+
+	const handleResize = () => {
+		if (window.innerWidth < 768) {
+			setLogo(IMAGES.logoredicon);
+			setLogoWidth(50);
+		} else {
+			setLogo(IMAGES.redLogo);
+			setLogoWidth(120); // Width for large logo
+		}
+	};
+	useEffect(() => {
+		handleResize(); // Set initial logo
+		window.addEventListener("resize", handleResize); // Listen for resize events
+
+		return () => {
+			window.removeEventListener("resize", handleResize); // Cleanup listener
+		};
+	}, []);
 
 	const [isOpen, setIsOpen] = useState(false);
 	const handleToggleSection = (index: number) => {
@@ -235,11 +255,11 @@ const TopNav = ({ className }: NavigationProps) => {
 	return (
 		<nav className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 w-full ">
 			<Image
-				src={IMAGES.redLogo}
-				width={120}
-				height={60}
-				alt={"logo"}
-				className="absolute left-7 top-1/2 transform -translate-y-1/2 cursor-pointer"
+				src={logo}
+				width={logoWidth}
+				height={(logoWidth * 60) / 120} // Maintain aspect ratio if needed
+				alt="logo"
+				className="absolute left-3 top-1/2 transform -translate-y-1/2 cursor-pointer"
 				onClick={() => route.push("/home")}
 			/>
 			<div className="mx-auto px-4 py-1 sm:px-6 lg:px-8 ">
@@ -275,7 +295,7 @@ const TopNav = ({ className }: NavigationProps) => {
 								<DropdownMenuTrigger asChild>
 									<Button
 										variant={"outline"}
-										className="mr-10 lg:mr-0 gap-3 bg-primary text-white border-none "
+										className="mr-10 lg:mr-0 gap-3 bg-primary text-white border-none rounded-xl "
 									>
 										<LogIn className=" h-5 w-5 rotate-0 scale-100 transition-all dark:text-white text-white" />
 										<span className="sm:flex">Register</span>

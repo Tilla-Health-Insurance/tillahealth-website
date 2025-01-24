@@ -27,8 +27,8 @@ export default function LoginForm() {
 						LOGIN
 					</h1>
 					<div className="space-y-1">
-						<p className="text-lg text-gray-600">Welcome Back.</p>
-						<p className="text-sm text-gray-500">
+						<p className="text-lg text-muted-foreground ">Welcome Back.</p>
+						<p className="text-sm text-muted-foreground ">
 							Please Login to your account
 						</p>
 					</div>

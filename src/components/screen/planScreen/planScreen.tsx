@@ -95,7 +95,7 @@ export default function PlanScreen({ plan }: PlanProps) {
 								<h2 className="text-3xl font-bold">{plan.whychoosetitle}</h2>
 								<div className="space-y-4">
 									{plan.whychoose?.map((item, index) => (
-										<div className="text-gray-600 flex" key={index}>
+										<div className="text-muted-foreground  flex" key={index}>
 											<CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
 											<span className="text-card-foreground text-lg">
 												{item}
@@ -119,7 +119,7 @@ export default function PlanScreen({ plan }: PlanProps) {
 							<h2 className="text-4xl font-bold mb-6">
 								Get Started with Your Health Plan
 							</h2>
-							<p className="max-w-3xl mx-auto text-gray-600">
+							<p className="max-w-3xl mx-auto text-muted-foreground ">
 								Explore your options, ask questions, or request a personalized
 								quote. We &apos;re here to assist you every step of the way!
 							</p>

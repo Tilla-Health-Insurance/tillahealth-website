@@ -12,7 +12,7 @@ import { articles } from "@/constants/data/articles";
 export default function NewsPage() {
 	const route = useRouter();
 	return (
-		<div className="min-h-screen flex flex-col container">
+		<div className="min-h-screen flex flex-col container py-20">
 			<main>
 				<div className="container mx-auto px-4 py-8">
 					<motion.div

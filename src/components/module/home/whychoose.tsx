@@ -40,7 +40,7 @@ export function WhyChooseSection() {
 						{">>"} Why Choose US {"<<"}
 					</h3>
 					<h2 className="text-4xl font-bold mb-6">Why Choose Tilla Health?</h2>
-					<p className="max-w-3xl mx-auto text-gray-600">
+					<p className="max-w-3xl mx-auto text-muted-foreground ">
 						Whether you&apos;re a federal employee, NGO worker, or a family
 						supported by diaspora members, we ensure that you receive
 						exceptional healthcare through the use of cutting-edge technologies
@@ -61,7 +61,7 @@ export function WhyChooseSection() {
 								<Heart className="w-8 h-8 text-[#CC1D48]" />
 							</div>
 							<h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-							<p className="text-gray-600">{feature.description}</p>
+							<p className="text-muted-foreground ">{feature.description}</p>
 						</motion.div>
 					))}
 				</div>

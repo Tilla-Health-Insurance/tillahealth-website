@@ -30,7 +30,7 @@ export function ServiceCard({
 	return (
 		<div
 			className={cn(
-				"rounded-3xl overflow-hidden bg-white transition-all hover:shadow-xl hover:bg-primary hover:text-white"
+				"rounded-3xl overflow-hidden bg-card transition-all hover:shadow-xl hover:bg-primary hover:text-white"
 			)}
 		>
 			<div className="aspect-[4/3] relative">

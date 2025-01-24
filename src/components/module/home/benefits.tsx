@@ -96,7 +96,7 @@ export function BenefitsSection() {
 										<h3 className="font-semibold mb-2 text-lg text-gray-800">
 											{benefit.title}
 										</h3>
-										<p className="text-sm text-gray-600">
+										<p className="text-sm text-muted-foreground ">
 											{benefit.description}
 										</p>
 									</div>

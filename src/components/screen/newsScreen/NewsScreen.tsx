@@ -76,7 +76,7 @@ export default function NewsPage() {
 								<Input
 									type="email"
 									placeholder="Enter your email"
-									className="bg-white border-white/20"
+									className="bg-background border-white/20"
 								/>
 								<Button
 									type="submit"

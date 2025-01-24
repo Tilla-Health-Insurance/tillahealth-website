@@ -106,7 +106,7 @@ export default function ServicesScreen() {
 					haveReadMore={true}
 				/>
 				{/* Transport Section */}
-				<div id="target-section">
+				<div>
 					<BlogsSection />
 				</div>
 				<CTA

@@ -23,7 +23,7 @@ const Navbar = () => {
 		<div className="bg-primary z-10 dark:bg-muted py-1 px-4 sm:px-8 text-center">
 			<div className="flex justify-between items-center mx-auto">
 				<p className="text-white dark:text-white text-sm flex gap-1">
-					&#128400; <span className="hidden sm:flex"> {typewriter}</span>
+					&#128400; <span className="hidden md:flex"> {typewriter}</span>
 				</p>
 				<div className="flex space-x-3 justify-center items-center">
 					<Button className="h-6 text-white" variant="ghost">

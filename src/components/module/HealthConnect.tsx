@@ -34,13 +34,13 @@ const HealthConnectSection = ({ healthConnectData }: DataProps) => {
 						{/* Left Column */}
 						<div className="space-y-6">
 							<h3 className="text-primary">{healthConnectData?.subtitle}</h3>
-							<h1 className="text-4xl font-medium text-gray-700">
+							<h1 className="text-4xl font-medium text-muted-foreground ">
 								{healthConnectData?.title}
 							</h1>
 
 							<div className="space-y-4">
 								<h2 className="text-gray-600">Coverage Details:</h2>
-								<p className="text-gray-600">
+								<p className="text-muted-foreground ">
 									{healthConnectData?.coverageDetails.intro}
 								</p>
 							</div>
@@ -48,10 +48,10 @@ const HealthConnectSection = ({ healthConnectData }: DataProps) => {
 
 						{/* Right Column */}
 						<div className="space-y-6">
-							<p className="text-gray-600">
+							<p className="text-muted-foreground ">
 								{healthConnectData?.description.intro.map((item, index) => (
 									<li key={index} className="flex items-start gap-2 mb-3">
-										<span className="text-gray-700">{item}</span>
+										<span className="text-muted-foreground ">{item}</span>
 									</li>
 								))}
 							</p>
@@ -62,7 +62,7 @@ const HealthConnectSection = ({ healthConnectData }: DataProps) => {
 									<table className="w-full border-collapse">
 										<thead>
 											<tr className="border-b">
-												<th className="py-2 px-4 text-left font-normal text-gray-600">
+												<th className="py-2 px-4 text-left font-normal text-muted-foreground ">
 													Plan Tier
 												</th>
 												<th className="py-2 px-4 text-left font-normal text-gray-600">

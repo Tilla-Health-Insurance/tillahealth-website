@@ -144,7 +144,7 @@ function FeatureCard({
 export function PortalsSection() {
 	return (
 		<section
-			className="py-24 bg-gradient-to-b from-blue-50 via-white to-gray-50 dark:bg-muted/40 dark:from-black dark:via-gray-700 dark:to-gray-900 
+			className="py-24 bg-gradient-to-b from-blue-50 via-white to-gray-50 dark:from-black dark:via-black dark:to-black
                transition duration-300"
 		>
 			<div className="container mx-auto px-6 lg:px-12 flex flex-col lg:flex-row items-center gap-12">
@@ -153,10 +153,10 @@ export function PortalsSection() {
 					<h3 className="text-sm font-semibold text-primary mb-4">
 						{">>"} Portals {"<<"}
 					</h3>
-					<h2 className="text-4xl font-bold text-gray-800 leading-snug">
+					<h2 className="text-4xl font-bold leading-snug">
 						Dedicated TillaHealth Portals
 					</h2>
-					<p className="mt-4 text-gray-600 leading-relaxed">
+					<p className="mt-4 text-muted-foreground leading-relaxed">
 						Empowering all stakeholders in our healthcare ecosystem with
 						dedicated solutions
 					</p>

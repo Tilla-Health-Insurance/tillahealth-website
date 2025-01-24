@@ -25,7 +25,7 @@ export function AboutSection() {
 					className="object-cover brightness-50"
 					priority
 				/>
-				{/* <div className="absolute inset-0 bg-gradient-to-t from-red-600 to-transparent" /> */}
+				<div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent" />
 			</div>
 			<div className="relative mx-auto px-4">
 				<div className="max-w-3xl p-6 mb-10 lg:mb-0 lg:mr-10">
@@ -47,7 +47,7 @@ export function AboutSection() {
 					<Button
 						variant="outline"
 						size="lg" // Increased button size for better visibility
-						className="text-primary border-2 border-white hover:bg-white hover:text-[#CC1D48] transition-all duration-300 mt-3"
+						className="text-primary border-2 border-white hover:bg-white hover:text-[#CC1D48] transition-all duration-300 mt-3 rounded-2xl"
 						onClick={() => router.push("/who-we-are" as any)}
 					>
 						Read More

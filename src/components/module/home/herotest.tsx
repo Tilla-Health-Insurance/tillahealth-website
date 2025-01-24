@@ -266,7 +266,7 @@ export default function HeroSlider() {
 
 	useEffect(() => {
 		const handleResize = () => {
-			setIsMobile(window.innerWidth < 768); // Adjust this breakpoint as necessary
+			setIsMobile(window.innerWidth < 801); // Adjust this breakpoint as necessary
 		};
 
 		handleResize(); // Check on mount
@@ -276,7 +276,7 @@ export default function HeroSlider() {
 
 	return (
 		<div
-			className="relative"
+			className="relative overflow-hidden"
 			onMouseEnter={() => setIsPaused(true)}
 			onMouseLeave={() => {
 				setIsPaused(false);
@@ -342,7 +342,7 @@ export default function HeroSlider() {
 					</AnimatePresence>
 				</div>
 				{/* Content Container with Better Spacing */}
-				<div className="relative container mx-auto px-4 h-full ">
+				<div className=" flex justify-center relative container mx-auto px-4 h-full ">
 					<div className="grid lg:grid-cols-2 gap-8 h-full items-center pb-20 pt-40 ">
 						<AnimatePresence mode="wait">
 							<motion.div

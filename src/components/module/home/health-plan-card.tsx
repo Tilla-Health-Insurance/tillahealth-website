@@ -89,18 +89,18 @@ export function HealthPlanCard({
 						className="overflow-hidden"
 					>
 						<div className="bg-white mt-4 p-6 rounded-xl shadow-lg space-y-6">
-							<p className="text-gray-600">{plan.description}</p>
+							<p className="text-muted-foreground ">{plan.description}</p>
 							<div>
 								<h4 className="text-lg font-semibold text-primary mb-2">
 									Eligibility
 								</h4>
-								<p className="text-gray-600">{plan.eligibility}</p>
+								<p className="text-muted-foreground ">{plan.eligibility}</p>
 							</div>
 							<div>
 								<h4 className="text-lg font-semibold text-primary mb-2">
 									Key Features
 								</h4>
-								<p className="text-gray-600">{plan.features}</p>
+								<p className="text-muted-foreground ">{plan.features}</p>
 							</div>
 						</div>
 					</motion.div>

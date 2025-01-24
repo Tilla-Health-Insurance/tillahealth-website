@@ -10,7 +10,7 @@ import { IMAGES } from "@/constants/files";
 
 export default function MobileAppSection() {
 	return (
-		<section className="overflow-hidden max-h-screen  bg-gradient-to-b from-[#e8f2ff] via-white to-gray-50 container">
+		<section className="overflow-hidden max-h-screen py-5 md:py-0 bg-gradient-to-b from-[#e8f2ff] via-white to-gray-50 container  dark:from-black dark:via-black dark:to-black ">
 			<div className="container px-4 md:px-6">
 				<div className="grid gap-12 lg:grid-cols-2 lg:gap-24">
 					<motion.div

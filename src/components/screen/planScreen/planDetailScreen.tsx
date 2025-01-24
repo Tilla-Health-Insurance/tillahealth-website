@@ -163,19 +163,19 @@ export default function PlanDetailScreen({ details }: PlanProps) {
 							<TabsList className="h-auto  flex-col md:flex-row gap-2 bg-muted p-4 rounded-lg">
 								<TabsTrigger
 									value="insurance"
-									className="w-full md:w-auto px-8 py-4 text-sm font-semibold rounded-lg  transition-all  data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:border-b-primary data-[state=active]:border-2"
+									className="w-full md:w-auto px-8 py-4 text-sm font-semibold rounded-lg  transition-all  data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:border-b-primary data-[state=active]:border-2"
 								>
 									OUR HEALTH INSURANCE PLAN
 								</TabsTrigger>
 								<TabsTrigger
 									value="different"
-									className="w-full md:w-auto px-8 py-4 text-sm font-semibold rounded-lg  transition-all  data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:border-b-primary data-[state=active]:border-2"
+									className="w-full md:w-auto px-8 py-4 text-sm font-semibold rounded-lg  transition-all  data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:border-b-primary data-[state=active]:border-2"
 								>
 									WHAT MAKES US DIFFERENT
 								</TabsTrigger>
 								<TabsTrigger
 									value="member"
-									className="w-full md:w-auto px-8 py-4 text-sm font-semibold rounded-lg  transition-all  data-[state=active]:bg-white data-[state=active]:text-primary data-[state=active]:border-b-primary data-[state=active]:border-2"
+									className="w-full md:w-auto px-8 py-4 text-sm font-semibold rounded-lg  transition-all  data-[state=active]:bg-background data-[state=active]:text-primary data-[state=active]:border-b-primary data-[state=active]:border-2"
 								>
 									BECOME A MEMBER
 								</TabsTrigger>
@@ -189,7 +189,7 @@ export default function PlanDetailScreen({ details }: PlanProps) {
 								<section className="py-16 bg-gray-50">
 									<div className="container text-center">
 										<h2 className="text-3xl font-bold mb-8">Benefits</h2>
-										<p className="text-gray-600 mb-8">
+										<p className="text-muted-foreground  mb-8">
 											See your benefit listed together in one space. See Benefit
 											at a glance Brochure
 										</p>

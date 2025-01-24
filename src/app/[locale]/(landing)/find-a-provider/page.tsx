@@ -135,7 +135,7 @@ export default function Home() {
 	};
 
 	return (
-		<div className="min-h-screen bg-gray-100">
+		<div className="min-h-screen ">
 			<main>
 				<div className="App">
 					<section className="relative h-[60vh] flex items-center bg-primary overflow-hidden">
@@ -169,7 +169,7 @@ export default function Home() {
 				</div>
 				<div className="space-y-6 px-4 py-6  max-w-7xl mx-auto sm:px-6 lg:px-8">
 					<div className="border-l-4 border-primary pl-6">
-						<p className="text-lg text-gray-700">
+						<p className="text-lg text-muted-foreground">
 							Whether you want to find a doctor for yourself or a family member,
 							we can help you get to the right place. Tilla Health
 							companies&apos; contract with doctors and health care

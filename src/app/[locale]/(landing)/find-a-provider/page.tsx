@@ -138,7 +138,7 @@ export default function Home() {
 		<div className="min-h-screen ">
 			<main>
 				<div className="App">
-					<section className="relative h-[60vh] flex items-center bg-primary overflow-hidden">
+					<section className="relative h-[40vh] flex items-center bg-primary overflow-hidden">
 						{/* Add decorative waves */}
 						<div className="absolute bottom-0 left-0 w-full">
 							<svg

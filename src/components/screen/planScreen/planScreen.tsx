@@ -80,13 +80,13 @@ export default function PlanScreen({ plan }: PlanProps) {
 				<section className="py-16 container">
 					{plan.whychoose && (
 						<div className="grid md:grid-cols-2 gap-12 items-center">
-							<div className="relative h-[400px]">
+							<div className="relative h-[80vh] w-full">
 								<Image
 									src={plan.image2}
 									alt="Family under umbrella illustration"
-									width={300}
-									height={300}
-									className="w-full h-full"
+									layout="fill" // Use layout="fill" to cover the parent container
+									objectFit="contain" // Ensures the image covers the container while maintaining aspect ratio
+									className="rounded-lg" // Optional: add any styling you want
 								/>
 							</div>
 
@@ -97,9 +97,7 @@ export default function PlanScreen({ plan }: PlanProps) {
 									{plan.whychoose?.map((item, index) => (
 										<div className="text-muted-foreground  flex" key={index}>
 											<CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
-											<span className="text-card-foreground text-lg">
-												{item}
-											</span>
+											<span className="text-card-foreground">{item}</span>
 										</div>
 									))}
 								</div>

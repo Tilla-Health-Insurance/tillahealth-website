@@ -583,7 +583,8 @@ const details: Record<DetailKey, Detail> = {
 			title: "Family and Individual Health Plan",
 			subtitle: "Tilla Health",
 			coverageDetails: {
-				intro: "",
+				intro:
+					"Comprehensive health coverage for families, including children, spouses, and elderly parents. Options include preventive care, maternity services, pediatric and geriatric care, as well as chronic disease management.Flexible healthcare coverage for individuals seeking personal healthcare solutions. Includes options for primary care, specialized treatment, mental health support, and chronic disease management.",
 			},
 			description: {
 				intro: [
@@ -670,7 +671,8 @@ const details: Record<DetailKey, Detail> = {
 			title: "Private Sector Health Plan",
 			subtitle: "Tilla Health",
 			coverageDetails: {
-				intro: "",
+				intro:
+					"Custom health plans designed for employees of private companies. This plan focuses on workplace wellness programs, mental health support, chronic disease management, and access to both remote and urban healthcare.",
 			},
 			description: {
 				intro: [
@@ -757,7 +759,8 @@ const details: Record<DetailKey, Detail> = {
 			title: "Our FEP Health insurance Plan",
 			subtitle: "Tilla Health",
 			coverageDetails: {
-				intro: "The Federal Employee Program (FEP) Health Plan",
+				intro:
+					"Tailored healthcare plans for federal government employees, providing comprehensive preventive care, chronic disease management, mental health services, and workplace wellness programs.",
 			},
 			description: {
 				intro: [

@@ -70,10 +70,10 @@ const hospitals = [
 		name: "Semah MCH Center",
 		address:
 			"Haya Hulet (22) Junction around Birhan Zare School, Addis Ababa, Ethiopia",
-		phone: "+251 91 122 4263",
+		phone: "+251 93 029 4147",
 		imageUrl: IMAGES.semahHospital,
 		facility_affiliation: "Private",
-		facility_type: "Medical Clinic",
+		facility_type: "MCH( Maternity and Children's Health) Center",
 		rating: "4.5 (11)",
 		accepts: "Tilla Health",
 	},
@@ -233,6 +233,9 @@ export default function Home() {
 										</SelectItem>
 										<SelectItem value="Medical Clinic">
 											Medical Clinic
+										</SelectItem>
+										<SelectItem value="MCH( Maternity and Children's Health) Center">
+											MCH( Maternity and Children&apos;s Health) Center
 										</SelectItem>
 									</SelectContent>
 								</Select>

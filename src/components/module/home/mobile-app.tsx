@@ -50,7 +50,7 @@ export default function MobileAppSection() {
 						viewport={{ once: true }}
 						className="relative"
 					>
-						<div className="relative aspect-[4/6] ">
+						<div className="relative aspect-[4/5] ">
 							<Image
 								src={IMAGES.mobile}
 								alt="Mobile App Screenshot"

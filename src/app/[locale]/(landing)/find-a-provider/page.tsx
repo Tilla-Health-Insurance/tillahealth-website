@@ -18,26 +18,26 @@ import { IMAGES } from "@/constants/files";
 const hospitals = [
 	{
 		name: "Care Land General Hospital",
-		address: "Sheger NOC Abageda Roundabout, Addis Ababa, Ethiopia",
+		location: "Sheger NOC Abageda Roundabout, Addis Ababa, Ethiopia",
 		hours: "Open 24 hours",
 		imageUrl: IMAGES.careLandHospital,
-		phone: "+251 97 786 8686",
+		phone: ["+251 97 786 8686"],
 		facility_affiliation: "Private",
 		facility_type: "Hospital",
 		rating: "4.8 (482)",
 		accepts: "Tilla Health",
 	},
-	{
-		name: "Nordic Medical Centre",
-		address: "Bole sub city, Kebele 01",
-		hours: "Open 24 hours",
-		imageUrl: IMAGES.nordicHospital,
-		phone: "+251 92 910 5653",
-		facility_affiliation: "Private",
-		facility_type: "Medical Center",
-		rating: "4.3 (100)",
-		accepts: "Tilla Health",
-	},
+	// {
+	// 	name: "Nordic Medical Centre",
+	// 	location: "Bole sub city, Kebele 01",
+	// 	hours: "Open 24 hours",
+	// 	imageUrl: IMAGES.nordicHospital,
+	// 	phone: ["+251 92 910 5653"],
+	// 	facility_affiliation: "Private",
+	// 	facility_type: "Medical Center",
+	// 	rating: "4.3 (100)",
+	// 	accepts: "Tilla Health",
+	// },
 	{
 		name: "CURE Ethiopia Children's Hospital",
 		hours: {
@@ -49,8 +49,9 @@ const hospitals = [
 			Tuesday: "8 AM–5 PM",
 			Wednesday: "8 AM–5 PM",
 		},
+		location: "Hamle 19 Public Park, Addis Ababa",
 		imageUrl: IMAGES.cureHospital,
-		phone: "+251 11 122 7520",
+		phone: ["+251 11 122 7520"],
 		facility_affiliation: "Non-Profit",
 		facility_type: "Hospital",
 		rating: "4.5 (22)",
@@ -58,8 +59,8 @@ const hospitals = [
 	},
 	{
 		name: "Abay Medium Clinic",
-		address: "Addis Ababa, Ethiopia",
-		phone: "+251 11 419 6184",
+		location: "Addis Ababa, Ethiopia",
+		phone: ["+251 11 419 6184"],
 		imageUrl: IMAGES.abayHospital,
 		facility_affiliation: "Private",
 		facility_type: "Medical Clinic",
@@ -68,9 +69,9 @@ const hospitals = [
 	},
 	{
 		name: "Semah MCH Center",
-		address:
+		location:
 			"Haya Hulet (22) Junction around Birhan Zare School, Addis Ababa, Ethiopia",
-		phone: "+251 93 029 4147",
+		phone: ["+251 93 029 4147", "+251 942747474"],
 		imageUrl: IMAGES.semahHospital,
 		facility_affiliation: "Private",
 		facility_type: "MCH( Maternity and Children's Health) Center",

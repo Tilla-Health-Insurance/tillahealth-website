@@ -41,7 +41,7 @@ export default function NewsPage() {
 						<Button
 							size="lg"
 							variant="default"
-							className="text-center items-center hover:bg-primary"
+							className="text-center items-center hover:bg-primary rounded-xl"
 							onClick={() => route.push("/news")}
 						>
 							Browse all Latest News and Articles

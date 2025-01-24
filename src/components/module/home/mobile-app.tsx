@@ -3,9 +3,7 @@
 import Image from "next/image";
 
 import { motion } from "framer-motion";
-import { Apple, Play } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import { IMAGES } from "@/constants/files";
 
 export default function MobileAppSection() {
@@ -28,11 +26,11 @@ export default function MobileAppSection() {
 								Your Health Insurance in Your Pocket
 							</h2>
 							<p className="text-lg text-muted-foreground">
-								Download our mobile app to access your health insurance
-								coverage, find doctors, and manage claims on the go.
+								Our mobile app to access your health insurance coverage, find
+								doctors, and manage claims on the go.
 							</p>
 						</div>
-						<div className="flex flex-col gap-2 sm:flex-row">
+						{/* <div className="flex flex-col gap-2 sm:flex-row">
 							<Button className="hover:bg-primary flex items-center gap-2">
 								<Apple className="h-5 w-5" />
 								Download for iOS
@@ -41,6 +39,11 @@ export default function MobileAppSection() {
 								<Play className="h-5 w-5" />
 								Download for Android
 							</Button>
+						</div> */}
+						<div className=" p-4">
+							<span className="font-semibold text-lg text-primary">
+								Stay Tuned for Our Mobile App!
+							</span>
 						</div>
 					</motion.div>
 					<motion.div

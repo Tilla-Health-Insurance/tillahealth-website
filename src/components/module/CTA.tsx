@@ -53,7 +53,7 @@ export default function CTA({
 					<Button
 						size="lg"
 						variant="outline"
-						className="animate-fade-in text-primary"
+						className="animate-fade-in text-primary rounded-xl"
 						onClick={() => route.push(`${link}` as `/${string}`)}
 					>
 						{btnText}

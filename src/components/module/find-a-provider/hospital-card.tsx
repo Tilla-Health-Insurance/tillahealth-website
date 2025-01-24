@@ -15,7 +15,7 @@ import {
 interface HospitalCardProps {
 	name: string;
 	location?: string;
-	phone: string;
+	phone: string[];
 	imageUrl?: any;
 	facility_affiliation: string;
 	facility_type: string;
@@ -64,13 +64,28 @@ export function HospitalCard({
 							{location && (
 								<div className="flex items-center text-sm text-gray-500">
 									<MapPin className="w-4 h-4 mr-2 flex-shrink-0" />
-									<span className="line-clamp-1">{location}</span>
+									<span className="line-clamp-2">{location}</span>
 								</div>
 							)}
 							<div className="flex items-center text-sm text-gray-500">
 								<Phone className="w-4 h-4 mr-2 flex-shrink-0" />
-								<span>{phone}</span>
+								<div className="gap-2">
+									{phone.map((number, index) => (
+										<p key={index} className="flex">
+											<a
+												href={`tel:${number}`}
+												className="text-red-500 hover:underline"
+											>
+												{number}
+											</a>
+										</p>
+									))}
+								</div>
 							</div>
+							{/* <div className="flex items-center text-sm text-gray-500">
+								<Building2 className="w-4 h-4 mr-2 flex-shrink-0" />
+								<span>{address}</span>
+							</div> */}
 							<div className="flex items-center text-sm text-gray-500">
 								<Building2 className="w-4 h-4 mr-2 flex-shrink-0" />
 								<span>{facility_type}</span>

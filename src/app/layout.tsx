@@ -5,11 +5,43 @@ import "./globals.css";
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 
 type RootLayoutProps = {
-	children: ReactNode;
+  children: ReactNode;
 };
 
-// Since we have a `not-found.tsx` page on the root, a layout
-// file is required, even if it's just passing children through.
 export default function RootLayout({ children }: RootLayoutProps) {
-	return children;
+  return (
+    <html lang="en">
+      <head>
+        {/* Add global meta tags */}
+        <meta charSet="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="TillaHealth - Your health partner" />
+
+        {/* Add Google Analytics tracking code */}
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=G-QZQ49T7JEN`}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-QZQ49T7JEN');
+            `,
+          }}
+        />
+
+        {/* Add custom fonts */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+          rel="stylesheet"
+        />
+      </head>
+      <body>
+        {children}
+      </body>
+    </html>
+  );
 }

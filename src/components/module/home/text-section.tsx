@@ -30,15 +30,15 @@ export default function TextSection() {
 						transition={{ duration: 0.5, delay: 0.2 }}
 						className="mt-8 space-y-6"
 					>
-						<p className="text-lg leading-relaxed text-muted-foreground md:text-xl">
+						<p className="text-md leading-relaxed text-muted-foreground">
 							Tilla Health leads Ethiopia&apos;s Digital Health Initiative with
 							innovative programs addressing preventive care, disease
 							management, and telehealth services, ensuring equitable access to
-							quality care. From Bahir Dar and Gondar to Addis Ababa, we are
+							quality care. From Hawassa and Bahir Dar to Addis Ababa, we are
 							transforming healthcare delivery for individuals, families, NGOs,
 							businesses, and the diaspora community.
 						</p>
-						<p className="text-lg leading-relaxed text-muted-foreground md:text-xl">
+						<p className="text-md leading-relaxed text-muted-foreground ">
 							Leveraging Ethiopia&apos;s growing digital infrastructure, Tilla
 							Health creates a connected healthcare ecosystem, bridging gaps,
 							reducing travel, and delivering care where it&apos;s needed most.

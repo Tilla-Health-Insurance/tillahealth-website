@@ -1,3 +1,4 @@
+import { DM_Sans, Poppins } from "next/font/google";
 import localFont from "next/font/local";
 
 import { NextIntlClientProvider } from "next-intl";
@@ -12,7 +13,14 @@ import { ThemeProvider } from "@/providers/theme-provider";
 const myFont = localFont({
 	src: "../../../public/fonts/NotoSerifEthiopic-VariableFont_wdth,wght.ttf",
 });
-
+const poppins = Poppins({
+	weight: ["400", "500", "600", "700", "800", "900"],
+	subsets: ["latin"],
+});
+const dmSans = DM_Sans({
+	weight: ["400", "500", "600", "700", "800", "900"],
+	subsets: ["latin"],
+});
 export default async function LocaleLayout({
 	children,
 	params: { locale },
@@ -30,7 +38,7 @@ export default async function LocaleLayout({
 				<link rel="icon" href="/favicon.ico" type="image/x-icon" />
 				<title>Tillahealth</title>
 			</head>
-			<body className={myFont.className}>
+			<body className={`${myFont.className}  ${dmSans.className}`}>
 				<QueryProviders>
 					<StoreProvider>
 						<ThemeProvider

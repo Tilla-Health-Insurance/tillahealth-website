@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 import { motion } from "framer-motion";
-import { Heart, User2 } from "lucide-react";
+import { Heart } from "lucide-react";
 
 import { IMAGES } from "@/constants/files";
 

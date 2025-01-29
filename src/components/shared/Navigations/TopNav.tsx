@@ -43,6 +43,16 @@ const TopNav = ({ className }: NavigationProps) => {
 	const [openSectionIndex, setOpenSectionIndex] = useState<number | null>(null);
 	const [logo, setLogo] = useState(IMAGES.redLogo);
 	const [logoWidth, setLogoWidth] = useState(120); // Default width for large logo
+	const [isScrolled, setIsScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setIsScrolled(window.scrollY > 0);
+		};
+
+		window.addEventListener("scroll", handleScroll);
+		return () => window.removeEventListener("scroll", handleScroll);
+	}, []);
 
 	const handleResize = () => {
 		if (window.innerWidth < 768) {
@@ -253,7 +263,12 @@ const TopNav = ({ className }: NavigationProps) => {
 		</nav>
 	);
 	return (
-		<nav className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 w-full ">
+		<nav
+			className={cn(
+				"fixed bg-background z-50 w-full transition-all duration-100 ease-in-out",
+				isScrolled && "shadow-md top-0"
+			)}
+		>
 			<Image
 				src={logo}
 				width={logoWidth}

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import {
 	ClipboardCheck,
 	Clock,
@@ -10,6 +12,7 @@ import {
 } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
+import { IMAGES } from "@/constants/files";
 
 import { SectionHeading } from "./section-heading";
 
@@ -59,7 +62,7 @@ const benefits = [
 	{
 		title: "Sustainable Systems",
 		description:
-			"Resilient infrastructure to address Ethiopia’s evolving healthcare needs.",
+			"Resilient infrastructure to address Ethiopia's evolving healthcare needs.",
 		icon: Link, // Represents connection and sustainability
 	},
 	{
@@ -71,10 +74,20 @@ const benefits = [
 ];
 export function BenefitsSection() {
 	return (
-		<section className="py-24 bg-background">
+		<section className="pb-24 bg-background">
 			<div className="container px-4 md:px-6">
+				<div className="relative w-full flex items-center justify-center  mb-[-12] rounded-xl overflow-hidden mx-auto">
+					<Image
+						src={IMAGES.umbrella}
+						alt="Why Choose Tilla Health"
+						className="object-contain"
+						width={700}
+						height={300}
+					/>
+					{/* <div className="absolute inset-0 bg-black/40" /> */}
+				</div>
 				<h3 className="text-sm font-semibold text-primary mb-4 text-center">
-					{">>"} Why Choose Us {"<<"}
+					{">>"} Why Choose Us{"<<"}
 				</h3>
 				<SectionHeading
 					title="Why Choose Tilla Health"

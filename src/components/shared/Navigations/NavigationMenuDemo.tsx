@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 import { ArrowRight, ChevronDown } from "lucide-react";
@@ -19,6 +20,7 @@ interface NavigationProps {
 }
 
 export function NavigationMenuDemo({ className }: NavigationProps) {
+	const pathname = usePathname();
 	const [isOpen, setIsOpen] = useState(false);
 	const [openIndex, setOpenIndex] = useState(null);
 
@@ -41,30 +43,20 @@ export function NavigationMenuDemo({ className }: NavigationProps) {
 	const handleToggle = (index: any) => {
 		setOpenIndex(openIndex === index ? null : index); // Toggle the dropdown
 	};
-	// Fetch menu items
-	// const { data: menuItems, isLoading, isError } = useGetMenuItems();
 
-	// // Log the fetched data
-	// console.log("Fetched Menu Items:", menuItems);
-
-	// // Handle loading state
-	// if (isLoading) {
-	// 	return <div>Loading...</div>;
-	// }
-
-	// // Handle error state
-	// if (isError) {
-	// 	return <div>Error loading menu items.</div>;
-	// }
-
-	// // Fallback for undefined menuItems
-	// if (!menuItems) {
-	// 	return <div>No menu items available.</div>;
-	// }
-
+	const isActive = (href: string) => {
+		if (href === "/") {
+			return pathname.endsWith("/home");
+		}
+		return pathname.endsWith(href);
+	};
+	// console.log(pathname);
+	// // console.log(href);
+	// console.log(pathname.endsWith("/services"));
 	return (
 		<div className="relative">
 			{/* Desktop Menu */}
+
 			<div className="hidden md:hidden lg:block">
 				<NavigationMenu className="max-w-full">
 					<NavigationMenuList className="flex-wrap gap-2">
@@ -72,7 +64,11 @@ export function NavigationMenuDemo({ className }: NavigationProps) {
 							<NavigationMenuItem key={index} className="flex-shrink-0">
 								{item.content ? (
 									<>
-										<NavigationMenuTrigger className=" hover:text-primary focus:text-primary ">
+										<NavigationMenuTrigger
+											className={`hover:text-primary focus:text-primary ${
+												isActive(item.href) ? "text-primary" : ""
+											}`}
+										>
 											<item.icon className="w-4 h-4 mr-2" />
 											<Link href={item.href || ("#" as any)}>
 												{" "}
@@ -194,7 +190,9 @@ export function NavigationMenuDemo({ className }: NavigationProps) {
 								) : (
 									<Link
 										href={item.href || ("#" as any)}
-										className="flex items-center px-3 sm:px-4 py-2 text-sm font-medium  hover:text-primary "
+										className={`flex items-center px-3 sm:px-4 py-2 text-sm font-medium  hover:text-primary ${
+											isActive(item.href) ? "text-primary" : ""
+										} `}
 									>
 										<item.icon className="w-4 h-4 mr-2" />
 										<span>{item.title}</span>

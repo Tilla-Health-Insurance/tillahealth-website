@@ -355,7 +355,7 @@ export default function HeroSlider() {
 								ref={(el) => (contentRefs.current[currentIndex] = el) as any}
 							>
 								<motion.h1
-									className="text-5xl md:text-6xl lg:text-7xl font-bold text-white drop-shadow-lg"
+									className="text-5xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg"
 									initial={{ opacity: 0, y: 20 }}
 									animate={{ opacity: 1, y: 0 }}
 									transition={{ delay: 0.2 }}

@@ -51,6 +51,8 @@ import telehealth from "../../public/images/telehealth.jpeg";
 import mobile from "../../public/images/transparent.png";
 import transport2 from "../../public/images/transport2.jpg";
 import transport from "../../public/images/transport.jpeg";
+import umbrella from "../../public/images/umbrella.png";
+import waterDrop from "../../public/images/water-drop.svg";
 import whoLogo from "../../public/images/who.png";
 import whytilla from "../../public/images/whytilla.jpeg";
 import bg2 from "../../public/images/young-handsome-physician-medical-robe-with-stethoscope.jpg";
@@ -116,4 +118,6 @@ export const IMAGES = Object.freeze({
 	careLandHospital: careLandHospital,
 	cureHospital: cureHospital,
 	semahHospital: semahHospital,
+	waterDrop: waterDrop,
+	umbrella: umbrella,
 });

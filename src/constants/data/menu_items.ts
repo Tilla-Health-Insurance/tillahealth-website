@@ -11,10 +11,11 @@ import {
 	Luggage,
 	Newspaper,
 	Stethoscope,
-	User,
 	User2,
 	Users,
 } from "lucide-react";
+
+import { IMAGES } from "@/constants/files";
 
 export const menuItems = [
 	{
@@ -26,6 +27,7 @@ export const menuItems = [
 		title: "Explore Services",
 		icon: BriefcaseMedical,
 		href: "/services",
+		image: IMAGES.diasporaconnect2,
 		content: {
 			header: "Healthcare Solutions",
 			description: "Comprehensive healthcare services for every need.",
@@ -197,6 +199,7 @@ export const menuItems = [
 		title: "About Us",
 		icon: Users,
 		href: "/who-we-are",
+		image: IMAGES.memberportal,
 		content: {
 			header: "Empowering Health",
 			description: "Your partner in achieving optimal health and well-being.",
@@ -274,6 +277,7 @@ export const menuItems = [
 		title: "News and Updates",
 		icon: Newspaper,
 		href: "/news",
+		image: IMAGES.brokerportal,
 		content: {
 			header: "Latest Healthcare News",
 			description: "Stay informed with the latest updates in healthcare.",

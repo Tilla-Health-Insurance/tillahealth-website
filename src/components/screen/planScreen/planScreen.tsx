@@ -55,24 +55,24 @@ export default function PlanScreen({ plan }: PlanProps) {
 	return (
 		<div className="min-h-screen flex flex-col">
 			<main>
-				<section className="relative bg-primary text-white">
-					<div className="container mx-auto grid md:grid-cols-2 gap-8 py-12 px-4 md:px-8 items-center">
-						<div className="space-y-4 md:space-y-6">
-							<h1 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight">
+				<section className="relative text-foreground min-h-[300px] sm:min-h-[400px] md:min-h-[500px] flex items-center justify-center mt-20 sm:mt-0 py-12">
+					<Image
+						src={plan.image}
+						alt="Plan Background"
+						fill
+						className="object-cover blur-sm"
+						sizes="100vw"
+						priority
+					/>
+					<div className="absolute inset-0 bg-black/50"></div>
+					<div className="container mx-auto relative z-10 px-4 sm:px-6 md:px-8">
+						<div className="max-w-5xl space-y-3 sm:space-y-4 md:space-y-6 mx-auto">
+							<h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white text-center">
 								{plan.title}
 							</h1>
-							<p className="text-base md:text-lg text-gray-200">
+							<p className="text-sm sm:text-base md:text-lg lg:text-xl text-white text-left sm:text-center">
 								{plan.description}
 							</p>
-						</div>
-						<div className="relative h-[250px] md:h-[350px] overflow-hidden rounded-md shadow-md">
-							<Image
-								src={plan.image}
-								alt="World Flags"
-								fill
-								className="object-cover"
-							/>
-							<div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-transparent pointer-events-none rounded-md"></div>
 						</div>
 					</div>
 				</section>

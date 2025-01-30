@@ -57,10 +57,10 @@ export function BlogsSection() {
 					viewport={{ once: true }}
 					className="text-center mb-12"
 				>
-					<h2 className="text-4xl font-bold mb-6 text-primary bg-clip-text  bg-gradient-to-r from-primary to-primary">
+					<h2 className="text-4xl font-bold mb-6 bg-clip-text bg-gradient-to-r from-primary to-primary">
 						Additional Services
 					</h2>
-					<p className="max-w-3xl mx-auto text-lg">
+					<p className="max-w-3xl text-muted-foreground mx-auto text-lg">
 						Our Additional Services section is designed to enhance your
 						experience and provide comprehensive support tailored to your needs.
 					</p>
@@ -74,16 +74,19 @@ export function BlogsSection() {
 							);
 							scrollToSlide(index);
 						}}
-						className="md:w-full mb-2"
+						className="w-full mb-8"
 					>
-						<TabsList className="md:inline-flex grid h-auto px-3 md:gap-32 ">
+						<TabsList className="inline-flex h-10 items-center justify-center rounded-md p-1 w-full max-w-3xl mx-auto">
 							{BLOG_POSTS.map((post) => (
 								<TabsTrigger
 									key={post.value}
 									value={post.value}
-									className="data-[state=active]:bg-card data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:text-primary flex-1 px-6 py-3 sm:px-6 sm:py-3 mx-2 sm:mx-0 text-center  whitespace-nowrap text-ellipsis"
+									className="inline-flex items-center justify-center whitespace-nowrap rounded-sm px-8 py-2.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:shadow-sm relative after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:transform after:scale-x-0 data-[state=active]:after:scale-x-100 after:transition-transform"
 								>
-									{post.title}
+									<span className="hidden md:inline">{post.title}</span>
+									<span className="md:hidden">
+										{post.title.split(" ").slice(0, 1).join(" ")}...
+									</span>
 								</TabsTrigger>
 							))}
 						</TabsList>
@@ -111,7 +114,6 @@ export function BlogsSection() {
 															src={post.image}
 															alt={post.title}
 															width={600}
-															// height={400}
 															className="object-cover aspect-video h-[30rem]"
 														/>
 													)}
@@ -122,7 +124,6 @@ export function BlogsSection() {
 																src={post.image2}
 																alt={post.title}
 																width={600}
-																// height={400}
 																className="object-cover aspect-video h-[30rem]"
 															/>
 														)}

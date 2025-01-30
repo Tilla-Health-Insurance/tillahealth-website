@@ -1,19 +1,24 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import * as React from "react";
 import { useState } from "react";
 
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 import {
 	NavigationMenu,
 	NavigationMenuContent,
 	NavigationMenuItem,
+	NavigationMenuLink,
 	NavigationMenuList,
 	NavigationMenuTrigger,
+	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { menuItems } from "@/constants/data/menu_items";
+import { cn } from "@/lib/utils";
 
 interface NavigationProps {
 	className?: string;
@@ -26,6 +31,7 @@ export function NavigationMenuDemo({ className }: NavigationProps) {
 
 	const [openSectionIndex, setOpenSectionIndex] = useState<number | null>(null);
 	const [openSublinks, setOpenSublinks] = useState<number[]>([]);
+	const [openSublink, setOpenSublink] = useState<string | null>(null);
 
 	const handleToggleSection = (index: number) => {
 		setOpenSectionIndex(openSectionIndex === index ? null : index);
@@ -44,6 +50,10 @@ export function NavigationMenuDemo({ className }: NavigationProps) {
 		setOpenIndex(openIndex === index ? null : index); // Toggle the dropdown
 	};
 
+	const handleSublink = (title: string) => {
+		setOpenSublink(openSublink === title ? null : title);
+	};
+
 	const isActive = (href: string) => {
 		if (href === "/") {
 			return pathname.endsWith("/home");
@@ -59,129 +69,99 @@ export function NavigationMenuDemo({ className }: NavigationProps) {
 
 			<div className="hidden md:hidden lg:block">
 				<NavigationMenu className="max-w-full">
-					<NavigationMenuList className="flex-wrap gap-2">
+					<NavigationMenuList>
 						{menuItems.map((item, index) => (
-							<NavigationMenuItem key={index} className="flex-shrink-0">
+							<NavigationMenuItem key={index}>
 								{item.content ? (
 									<>
 										<NavigationMenuTrigger
-											className={`hover:text-primary focus:text-primary ${
-												isActive(item.href) ? "text-primary" : ""
-											}`}
+											className={cn(
+												navigationMenuTriggerStyle(),
+												"hover:text-primary hover:bg-transparent active:bg-transparent focus:bg-transparent",
+												"relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary",
+												isActive(item.href) &&
+													"text-primary after:w-full bg-transparent"
+											)}
 										>
 											<item.icon className="w-4 h-4 mr-2" />
-											<Link href={item.href || ("#" as any)}>
-												{" "}
-												{item.title}
-											</Link>
+											{item.title}
 										</NavigationMenuTrigger>
 										<NavigationMenuContent>
-											<div className="w-full sm:w-[640px] md:w-[768px] lg:w-[1024px] xl:w-[1280px] bg-gradient-to-b from-card to-background">
-												<div className="max-w-7xl mx-auto p-4 sm:p-6">
-													<div className="grid grid-cols-1 md:grid-cols-4 gap-6 md:gap-8">
-														{/* Header Section */}
-														<div className="col-span-1">
-															<h3 className="text-lg sm:text-xl font-semibold mb-2 text-primary">
-																{item.content.header}
-															</h3>
-															<p className="text-sm text-muted-foreground mb-4">
-																{item.content.description}
-															</p>
-														</div>
+											<div className="w-[calc(100vw-4rem)] max-w-6xl mx-auto p-4 ">
+												<div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+													{/* Header Section */}
+													<div className="row-span-3">
+														<NavigationMenuLink asChild>
+															<Link
+																href={item.href || ("#" as any)}
+																className="flex h-full w-full select-none flex-col justify-end rounded-md p-6 no-underline outline-none focus:shadow-md relative overflow-hidden min-h-[320px]"
+															>
+																<Image
+																	src={item.image}
+																	alt={item.content.header || "Background"}
+																	fill
+																	className="object-cover object-center"
+																	priority
+																	sizes="(max-width: 768px) 100vw, 25vw"
+																/>
 
-														{/* Main Content Section */}
-														<div className="col-span-1 md:col-span-3">
+																<div className="absolute inset-0 bg-gradient-to-t from-black/60 to-black/20" />
+
+																<div className="relative z-10">
+																	<h3 className="mb-2 text-lg font-medium text-white">
+																		{item.content.header}
+																	</h3>
+																	<p className="text-sm text-white/80">
+																		{item.content.description}
+																	</p>
+																</div>
+															</Link>
+														</NavigationMenuLink>
+													</div>
+
+													{/* Main Content Section */}
+													<div className="col-span-3">
+														<ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
 															{item.content.sections?.map(
 																(section, sectionIndex) => (
 																	<div
 																		key={sectionIndex}
-																		className="mb-6 sm:mb-8"
+																		className={cn(
+																			"space-y-3",
+																			section.links.length > 4
+																				? "md:col-span-2"
+																				: ""
+																		)}
 																	>
-																		<h4 className="text-sm font-semibold text-muted-foreground mb-3 sm:mb-4">
+																		<h4 className="text-sm font-medium text-muted-foreground">
 																			{section.title}
 																		</h4>
-																		<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6">
+																		<div
+																			className={cn(
+																				"grid gap-2",
+																				section.links.length > 4
+																					? "grid-cols-2"
+																					: "grid-cols-1"
+																			)}
+																		>
 																			{section.links.map((link, linkIndex) => (
-																				<div key={linkIndex} className="group">
-																					<div className="flex items-center">
-																						<Link
-																							href={link.href as any}
-																							className="flex flex-1 items-start p-2 sm:p-3 rounded-lg hover:bg-accent transition-colors"
-																						>
-																							<link.icon className="w-5 h-5 text-primary mr-2 sm:mr-3 mt-1 flex-shrink-0" />
-																							<div className="min-w-0 flex-1">
-																								<div className="font-medium mb-1 group-hover:text-primary transition-colors truncate">
-																									{link.label}
-																								</div>
-																								<p className="text-sm text-muted-foreground mb-2 line-clamp-2">
-																									{link.description}
-																								</p>
-																							</div>
-																						</Link>
-																						{link.sublinks &&
-																							link.sublinks.length > 0 && (
-																								<button
-																									onClick={() =>
-																										handleToggle(linkIndex)
-																									}
-																									className="p-2 hover:bg-accent rounded-lg z-10 "
-																									aria-expanded={
-																										openIndex === linkIndex
-																									}
-																								>
-																									<ChevronDown className="h-5 w-5 text-primary" />
-																								</button>
-																							)}
-																					</div>
-
-																					{/* Dropdown for sublinks */}
-																					{link.sublinks &&
-																						openIndex === linkIndex && (
-																							<ul className="space-y-1 ml-7 mt-2">
-																								{link.sublinks.map(
-																									(sublink, sublinkIndex) => (
-																										<li key={sublinkIndex}>
-																											<Link
-																												href={
-																													sublink.href as any
-																												}
-																												className="text-sm text-muted-foreground hover:text-primary block py-1 px-2 rounded hover:bg-accent"
-																											>
-																												{sublink.label}
-																											</Link>
-																										</li>
-																									)
-																								)}
-																							</ul>
-																						)}
-																				</div>
+																				<ListItem
+																					key={linkIndex}
+																					href={link.href}
+																					title={link.label}
+																					sublinks={link.sublinks}
+																					icon={link.icon}
+																					openSublink={openSublink}
+																					onSublink={handleSublink}
+																				>
+																					{link.description}
+																				</ListItem>
 																			))}
 																		</div>
 																	</div>
 																)
 															)}
-														</div>
-													</div>
-
-													{/* Footer Section */}
-													<div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t">
-														<div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-															<div>
-																<h4 className="font-semibold text-primary">
-																	{item.content.footer?.title}
-																</h4>
-																<p className="text-sm text-muted-foreground">
-																	{item.content.footer?.description}
-																</p>
-															</div>
-															<Link
-																href="#"
-																className="inline-flex items-center text-primary hover:text-primary/90 font-medium"
-															>
-																{item.content.footer?.learnMoreLabel}
-																<ArrowRight className="ml-1 h-4 w-4" />
-															</Link>
-														</div>
+														</ul>
 													</div>
 												</div>
 											</div>
@@ -190,12 +170,21 @@ export function NavigationMenuDemo({ className }: NavigationProps) {
 								) : (
 									<Link
 										href={item.href || ("#" as any)}
-										className={`flex items-center px-3 sm:px-4 py-2 text-sm font-medium  hover:text-primary ${
-											isActive(item.href) ? "text-primary" : ""
-										} `}
+										legacyBehavior
+										passHref
 									>
-										<item.icon className="w-4 h-4 mr-2" />
-										<span>{item.title}</span>
+										<NavigationMenuLink
+											className={cn(
+												navigationMenuTriggerStyle(),
+												"hover:text-primary hover:bg-transparent active:bg-transparent focus:bg-transparent",
+												"relative after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-primary",
+												isActive(item.href) &&
+													"text-primary after:w-full bg-transparent"
+											)}
+										>
+											<item.icon className="w-4 h-4 mr-2" />
+											{item.title}
+										</NavigationMenuLink>
 									</Link>
 								)}
 							</NavigationMenuItem>
@@ -206,3 +195,95 @@ export function NavigationMenuDemo({ className }: NavigationProps) {
 		</div>
 	);
 }
+
+const ListItem = React.forwardRef<
+	React.ElementRef<"a">,
+	React.ComponentPropsWithoutRef<"a"> & {
+		href: string | URL | { pathname: string };
+		title: string;
+		icon?: any;
+		sublinks?: Array<{ href: string; label: string }>;
+		openSublink?: string | null;
+		onSublink?: (title: string) => void;
+	}
+>(
+	(
+		{
+			className,
+			title,
+			children,
+			sublinks,
+			icon: Icon,
+			openSublink,
+			onSublink,
+			...props
+		},
+		ref
+	) => {
+		const isOpen = openSublink === title;
+
+		return (
+			<li>
+				<div className="group">
+					<div className="flex items-center">
+						<NavigationMenuLink asChild>
+							<a
+								ref={ref}
+								className={cn(
+									"flex-1 block select-none rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent focus:bg-accent group",
+									className
+								)}
+								{...props}
+							>
+								<div className="grid grid-cols-[auto,1fr] gap-3">
+									{Icon && (
+										<Icon className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+									)}
+									<div>
+										<div className="text-sm font-medium leading-none group-hover:text-primary transition-colors">
+											{title}
+										</div>
+										<p className="line-clamp-2 text-sm leading-snug text-muted-foreground mt-1">
+											{children}
+										</p>
+									</div>
+								</div>
+							</a>
+						</NavigationMenuLink>
+						{sublinks && sublinks.length > 0 && (
+							<button
+								onClick={() => onSublink?.(title)}
+								className="p-2 hover:bg-accent rounded-lg z-10"
+								aria-expanded={isOpen}
+							>
+								<ChevronDown
+									className={cn(
+										"h-5 w-5 text-primary transition-transform duration-200",
+										isOpen && "transform rotate-180"
+									)}
+								/>
+							</button>
+						)}
+					</div>
+
+					{/* Sublinks dropdown */}
+					{sublinks && isOpen && (
+						<ul className="space-y-1 ml-7 mt-2">
+							{sublinks.map((sublink, index) => (
+								<li key={index}>
+									<Link
+										href={sublink.href as any}
+										className="text-sm text-muted-foreground hover:text-primary block py-1 px-2 rounded hover:bg-accent"
+									>
+										{sublink.label}
+									</Link>
+								</li>
+							))}
+						</ul>
+					)}
+				</div>
+			</li>
+		);
+	}
+);
+ListItem.displayName = "ListItem";

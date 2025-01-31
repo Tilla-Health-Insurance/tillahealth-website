@@ -24,7 +24,7 @@ export default function HeroSlider() {
 			title: "Health Coverage Made Simple",
 			description: (
 				<>
-					At <b className=" font-bold">Tilla Health </b> connects you to
+					<b className=" font-bold">Tilla Health </b> connects you to
 					personalized plans, virtual care, and the tools you need to stay
 					healthy and informed. Experienced care that fits your life.
 				</>
@@ -165,8 +165,12 @@ export default function HeroSlider() {
 					<b className=" font-bold"> Private Sector Plans </b>. These
 					comprehensive and customizable health coverage options are designed to
 					promote well-being, improve productivity, and ensure access to quality
-					healthcare services. With
-					<b className=" font-bold">Tilla Health</b>, you can invest in the
+					healthcare services.
+				</>
+			),
+			expandedContent: (
+				<>
+					With <b className=" font-bold">Tilla Health</b>, you can invest in the
 					health of your employees, fostering a thriving and productive
 					workforce for your business.
 				</>
@@ -273,52 +277,27 @@ export default function HeroSlider() {
 
 	return (
 		<div
-			className="relative overflow-hidden"
+			className="relative overflow-hidden min-h-screen bg-gradient-to-b from-background to-background/50"
 			onMouseEnter={() => setIsPaused(true)}
 			onMouseLeave={() => {
 				setIsPaused(false);
-				// startAutoPlay();
 			}}
 		>
 			<motion.section
 				initial={{ opacity: 0 }}
 				animate={{ opacity: 1 }}
 				transition={{ duration: 0.5 }}
-				className="relative h-[100vh]"
+				className="relative min-h-[100vh] flex items-center"
 			>
-				{/* Background Image with Enhanced Gradient Overlay */}
-				{/* <div className="absolute inset-0">
-					<AnimatePresence mode="wait">
-						<motion.div
-							key={currentIndex}
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							exit={{ opacity: 0 }}
-							transition={{ duration: 0.5 }}
-							className="relative w-full h-full "
-						>
-							<Image
-								src={heroContent[currentIndex].image || "/placeholder.svg"}
-								alt={`${heroContent[currentIndex].title} Background`}
-								fill
-								className="object-cover"
-								priority
-								sizes="100vw"
-							/>
-							{/* <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-transparent" /> 
-							<div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50" />
-						</motion.div>
-						
-					</AnimatePresence>
-				</div> */}
+				{/* Background Image with Modern Gradient Overlay */}
 				<div className="absolute inset-0">
 					<AnimatePresence mode="wait">
 						<motion.div
 							key={currentIndex}
-							initial={{ opacity: 0 }}
-							animate={{ opacity: 1 }}
-							exit={{ opacity: 0 }}
-							transition={{ duration: 0.5 }}
+							initial={{ opacity: 0, scale: 1.1 }}
+							animate={{ opacity: 1, scale: 1 }}
+							exit={{ opacity: 0, scale: 0.95 }}
+							transition={{ duration: 0.7 }}
 							className="relative w-full h-full"
 						>
 							<Image
@@ -333,154 +312,167 @@ export default function HeroSlider() {
 								priority
 								sizes="100vw"
 							/>
-							{/* <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/75 to-transparent" /> */}
-							<div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/50" />
+							{/* Modern gradient overlay */}
+							<div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-transparent" />
+							<div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black/90" />
+							{/* Subtle pattern overlay for texture */}
+							<div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay" />
 						</motion.div>
 					</AnimatePresence>
 				</div>
-				{/* Content Container with Better Spacing */}
-				<div className=" flex justify-center relative container mx-auto px-4 h-full ">
-					<div className="grid lg:grid-cols-2 gap-8 h-full items-center pb-20 pt-40 ">
-						<AnimatePresence mode="wait">
-							<motion.div
-								key={currentIndex}
-								initial={{ opacity: 0, x: -20 }}
-								animate={{ opacity: 1, x: 0 }}
-								exit={{ opacity: 0, x: 20 }}
-								transition={{ duration: 0.5 }}
-								className="text-white space-y-6 bg-red-700/70 rounded-xl p-6"
-								ref={(el) => (contentRefs.current[currentIndex] = el) as any}
-							>
-								<motion.h1
-									className="text-5xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg"
-									initial={{ opacity: 0, y: 20 }}
-									animate={{ opacity: 1, y: 0 }}
-									transition={{ delay: 0.2 }}
-								>
-									{heroContent[currentIndex].title}
-								</motion.h1>
 
+				{/* Content Container with Modern Layout */}
+				<div className="relative container mx-auto px-4 py-12 md:py-20">
+					<div className="flex flex-col gap-12">
+						<div className="w-full lg:w-[60%] mt-8 lg:mt-16">
+							<AnimatePresence mode="wait">
 								<motion.div
-									className={cn(
-										"prose prose-lg max-w-none",
-										"prose-headings:text-white prose-p:text-white/90",
-										"prose-strong:text-white prose-strong:font-bold",
-										"prose-li:text-white/90"
-									)}
-									initial={{ opacity: 0, y: 20 }}
-									animate={{ opacity: 1, y: 0 }}
-									transition={{ delay: 0.3 }}
+									key={currentIndex}
+									initial={{ opacity: 0, x: -20 }}
+									animate={{ opacity: 1, x: 0 }}
+									exit={{ opacity: 0, x: 20 }}
+									transition={{ duration: 0.5 }}
+									className="backdrop-blur-xs bg-black/20 rounded-3xl p-8 md:p-10 border border-white/10 shadow-2xl relative overflow-hidden"
+									ref={(el) => {
+										if (el) {
+											contentRefs.current[currentIndex] = el;
+										}
+									}}
 								>
-									{heroContent[currentIndex].description}
-									<AnimatePresence>
-										{expandedStates[currentIndex] && (
-											<motion.div
-												initial={{ opacity: 0, height: 0 }}
-												animate={{ opacity: 1, height: "auto" }}
-												exit={{ opacity: 0, height: 0 }}
-												transition={{
-													duration: 0.3,
-													height: {
-														duration: 0.4,
-													},
-													opacity: {
-														duration: 0.25,
-													},
-												}}
-											>
-												{heroContent[currentIndex].expandedContent}
-											</motion.div>
+									{/* Decorative elements */}
+									<div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16" />
+									<div className="absolute bottom-0 left-0 w-24 h-24 bg-primary/10 rounded-full blur-2xl -ml-12 -mb-12" />
+
+									<motion.h1
+										className="text-4xl md:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight"
+										initial={{ opacity: 0, y: 20 }}
+										animate={{ opacity: 1, y: 0 }}
+										transition={{ delay: 0.2 }}
+									>
+										{heroContent[currentIndex].title}
+									</motion.h1>
+
+									<motion.div
+										className={cn(
+											"prose prose-lg max-w-none text-white/90",
+											"[&_p]:text-white/90 [&_b]:text-white",
+											"[&_ul]:text-white/90 [&_li]:text-white/90",
+											"prose-strong:text-white prose-strong:font-bold"
 										)}
-									</AnimatePresence>
-								</motion.div>
+										initial={{ opacity: 0, y: 20 }}
+										animate={{ opacity: 1, y: 0 }}
+										transition={{ delay: 0.3 }}
+									>
+										{heroContent[currentIndex].description}
+										<AnimatePresence>
+											{expandedStates[currentIndex] && (
+												<motion.div
+													initial={{ opacity: 0, height: 0 }}
+													animate={{ opacity: 1, height: "auto" }}
+													exit={{ opacity: 0, height: 0 }}
+													transition={{
+														duration: 0.3,
+														height: { duration: 0.4 },
+														opacity: { duration: 0.25 },
+													}}
+												>
+													{heroContent[currentIndex].expandedContent}
+												</motion.div>
+											)}
+										</AnimatePresence>
+									</motion.div>
 
-								<motion.div
-									className="flex items-center gap-4 pt-4"
-									initial={{ opacity: 0, y: 20 }}
-									animate={{ opacity: 1, y: 0 }}
-									transition={{ delay: 0.4 }}
+									<motion.div
+										className="flex flex-row items-center space-x-4 pt-8"
+										initial={{ opacity: 0, y: 20 }}
+										animate={{ opacity: 1, y: 0 }}
+										transition={{ delay: 0.4 }}
+									>
+										<div className="flex flex-row items-center space-x-4">
+											{currentIndex !== 0 && (
+												<Button
+													size="lg"
+													variant="default"
+													className="rounded-full px-8 bg-primary hover:bg-primary/90 transition-all duration-300 hover:scale-105"
+													asChild
+												>
+													<Link href={heroContent[currentIndex].href as any}>
+														Get Started
+													</Link>
+												</Button>
+											)}
+											<Button
+												variant="outline"
+												size="lg"
+												onClick={() => toggleContent(currentIndex)}
+												className="rounded-full border-white/20 text-white bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105"
+												aria-expanded={expandedStates[currentIndex]}
+												aria-controls={`content-${currentIndex}`}
+											>
+												{expandedStates[currentIndex] ? (
+													<Minus className="mr-2 h-4 w-4" />
+												) : (
+													<Plus className="mr-2 h-4 w-4" />
+												)}
+												{expandedStates[currentIndex]
+													? "Show Less"
+													: "Learn More"}
+											</Button>
+										</div>
+									</motion.div>
+								</motion.div>
+							</AnimatePresence>
+
+							{/* Navigation Controls below content */}
+							<div className="flex flex-col gap-4 mt-8 lg:mt-16">
+								{/* Progress Indicator */}
+								<div
+									className="flex justify-center gap-3"
+									role="tablist"
+									aria-label="Slide indicators"
 								>
-									{currentIndex !== 0 && (
-										<Button
-											size="lg"
-											variant="default"
-											className="rounded-full px-8 bg-primary hover:bg-primary z-10"
-											asChild
-										>
-											<Link href={heroContent[currentIndex].href as any}>
-												Get Started
-											</Link>
-										</Button>
-									)}
+									{heroContent.map((_, index) => (
+										<button
+											key={index}
+											onClick={() => setCurrentIndex(index)}
+											className={cn(
+												"w-6 h-1 rounded-full transition-all duration-500",
+												index === currentIndex
+													? "bg-primary w-10"
+													: "bg-white/20 hover:bg-white/30"
+											)}
+											role="tab"
+											aria-selected={index === currentIndex}
+											aria-label={`Go to slide ${index + 1}`}
+										/>
+									))}
+								</div>
+
+								{/* Navigation Buttons */}
+								<div className="flex items-center justify-end gap-6">
 									<Button
 										variant="outline"
-										size="lg"
-										onClick={() => toggleContent(currentIndex)}
-										className="rounded-full border-white/30 text-white bg-white/10 backdrop-blur-sm z-10"
-										aria-expanded={expandedStates[currentIndex]}
-										aria-controls={`content-${currentIndex}`}
+										size="icon"
+										className="rounded-full w-14 h-14 border-white/20 text-white bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105"
+										onClick={handlePrev}
+										aria-label="Previous slide"
 									>
-										{expandedStates[currentIndex] ? (
-											<Minus className="mr-2 h-4 w-4" />
-										) : (
-											<Plus className="mr-2 h-4 w-4" />
-										)}
-										{expandedStates[currentIndex] ? "Show Less" : "Learn More"}
+										<ChevronLeft className="h-6 w-6" />
 									</Button>
-								</motion.div>
-							</motion.div>
-						</AnimatePresence>
-
-						{/* Navigation Controls with Progress Indicator */}
-						<div className="flex flex-col items-end justify-end h-full pb-12 gap-6">
-							<div className="flex items-center gap-4">
-								<Button
-									variant="outline"
-									size="icon"
-									className="rounded-full w-12 h-12 border-white/30 text-white bg-white/10 backdrop-blur-sm"
-									onClick={handlePrev}
-									aria-label="Previous slide"
-								>
-									<ChevronLeft className="h-6 w-6" />
-								</Button>
-								<Button
-									variant="outline"
-									size="icon"
-									className="rounded-full w-12 h-12 border-white/30 text-white bg-white/10 backdrop-blur-sm"
-									onClick={handleNext}
-									aria-label="Next slide"
-								>
-									<ChevronRight className="h-6 w-6" />
-								</Button>
+									<Button
+										variant="outline"
+										size="icon"
+										className="rounded-full w-14 h-14 border-white/20 text-white bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105"
+										onClick={handleNext}
+										aria-label="Next slide"
+									>
+										<ChevronRight className="h-6 w-6" />
+									</Button>
+								</div>
 							</div>
-							{/* <div
-								className="flex gap-2"
-								role="tablist"
-								aria-label="Slide indicators"
-							>
-								{heroContent.map((_, index) => (
-									<button
-										key={index}
-										onClick={() => {
-											setCurrentIndex(index);
-											startAutoPlay();
-										}}
-										className={cn(
-											"w-8 h-1 rounded-full transition-all duration-300",
-											index === currentIndex ? "bg-primary" : "bg-white/30"
-										)}
-										role="tab"
-										aria-selected={index === currentIndex}
-										aria-label={`Go to slide ${index + 1}`}
-									/>
-								))}
-							</div> */}
 						</div>
 					</div>
 				</div>
-
-				{/* Enhanced Gradient Overlays */}
-				{/* <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" /> */}
 			</motion.section>
 		</div>
 	);

@@ -21,15 +21,12 @@ export default function HeroSlider() {
 
 	const heroContent = [
 		{
-			title: "Tilla Health",
+			title: "Health Coverage Made Simple",
 			description: (
 				<>
-					At <b className=" font-bold">Tilla Health </b>, we are committed to
-					providing accessible, affordable, and comprehensive healthcare
-					coverage to individuals and families living across Ethiopia. Whether
-					you&apos;re part of the local community, an employee, or a government
-					worker, our health plans are tailored to meet your specific healthcare
-					needs.
+					At <b className=" font-bold">Tilla Health </b> connects you to
+					personalized plans, virtual care, and the tools you need to stay
+					healthy and informed. Experienced care that fits your life.
 				</>
 			),
 			expandedContent: (
@@ -202,7 +199,7 @@ export default function HeroSlider() {
 		setExpandedStates(new Array(heroContent.length).fill(false));
 
 		// Start autoplay
-		startAutoPlay();
+		// startAutoPlay();
 
 		return () => {
 			if (autoPlayRef.current) {
@@ -211,28 +208,28 @@ export default function HeroSlider() {
 		};
 	}, []);
 
-	const startAutoPlay = () => {
-		if (autoPlayRef.current) {
-			clearInterval(autoPlayRef.current);
-		}
+	// const startAutoPlay = () => {
+	// 	if (autoPlayRef.current) {
+	// 		clearInterval(autoPlayRef.current);
+	// 	}
 
-		if (!isPaused) {
-			autoPlayRef.current = window.setInterval(() => {
-				handleNext();
-			}, 5000); // Change slide every 5 seconds
-		}
-	};
+	// 	if (!isPaused) {
+	// 		autoPlayRef.current = window.setInterval(() => {
+	// 			handleNext();
+	// 		}, 5000); // Change slide every 5 seconds
+	// 	}
+	// };
 
 	const handleNext = () => {
 		setCurrentIndex((prev) => (prev + 1) % heroContent.length);
-		startAutoPlay(); // Reset timer when manually changed
+		// startAutoPlay(); // Reset timer when manually changed
 	};
 
 	const handlePrev = () => {
 		setCurrentIndex(
 			(prev) => (prev - 1 + heroContent.length) % heroContent.length
 		);
-		startAutoPlay(); // Reset timer when manually changed
+		// startAutoPlay(); // Reset timer when manually changed
 	};
 
 	const toggleContent = (index: number) => {
@@ -264,15 +261,15 @@ export default function HeroSlider() {
 	};
 	const [isMobile, setIsMobile] = useState(false);
 
-	useEffect(() => {
-		const handleResize = () => {
-			setIsMobile(window.innerWidth < 801); // Adjust this breakpoint as necessary
-		};
+	// useEffect(() => {
+	// 	const handleResize = () => {
+	// 		setIsMobile(window.innerWidth < 801); // Adjust this breakpoint as necessary
+	// 	};
 
-		handleResize(); // Check on mount
-		window.addEventListener("resize", handleResize);
-		return () => window.removeEventListener("resize", handleResize);
-	}, []);
+	// 	handleResize(); // Check on mount
+	// 	window.addEventListener("resize", handleResize);
+	// 	return () => window.removeEventListener("resize", handleResize);
+	// }, []);
 
 	return (
 		<div
@@ -280,7 +277,7 @@ export default function HeroSlider() {
 			onMouseEnter={() => setIsPaused(true)}
 			onMouseLeave={() => {
 				setIsPaused(false);
-				startAutoPlay();
+				// startAutoPlay();
 			}}
 		>
 			<motion.section

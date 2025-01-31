@@ -35,7 +35,7 @@ export default function Hero2() {
 
 	const heroContent = [
 		{
-			title: "Tilla Health",
+			title: "Health Coverage Made Simple",
 			description: (
 				<>
 					At <b className="text-primary font-bold">Tilla Health </b>, we are
@@ -262,17 +262,17 @@ export default function Hero2() {
 		);
 	};
 
-	useEffect(() => {
-		if (carouselRef.current) {
-			const itemWidth = carouselRef.current.clientWidth / 2; // Width of the visible area divided by 2 for centering
-			const scrollToIndex = currentIndex; // Current index to scroll to
+	// useEffect(() => {
+	// 	if (carouselRef.current) {
+	// 		const itemWidth = carouselRef.current.clientWidth / 2; // Width of the visible area divided by 2 for centering
+	// 		const scrollToIndex = currentIndex; // Current index to scroll to
 
-			carouselRef.current.scrollTo({
-				left: itemWidth * scrollToIndex, // Calculate the scroll position based on the item width
-				behavior: "smooth",
-			});
-		}
-	}, [currentIndex]);
+	// 		carouselRef.current.scrollTo({
+	// 			left: itemWidth * scrollToIndex, // Calculate the scroll position based on the item width
+	// 			behavior: "smooth",
+	// 		});
+	// 	}
+	// }, [currentIndex]);
 
 	return (
 		<div className="min-h-screen bg-muted/50">

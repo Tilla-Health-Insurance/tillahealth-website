@@ -26,6 +26,7 @@ const hospitals = [
 		facility_type: "Hospital",
 		rating: "4.8 (482)",
 		accepts: "Tilla Health",
+		country: "Ethiopia",
 	},
 	{
 		name: "CURE Ethiopia Children's Hospital",
@@ -45,6 +46,7 @@ const hospitals = [
 		facility_type: "Hospital",
 		rating: "4.5 (22)",
 		accepts: "Tilla Health",
+		country: "Ethiopia",
 	},
 	{
 		name: "Abay Medium Clinic",
@@ -55,6 +57,7 @@ const hospitals = [
 		facility_type: "Medical Clinic",
 		rating: "4.5 (10)",
 		accepts: "Tilla Health",
+		country: "Ethiopia",
 	},
 	{
 		name: "Semah MCH Center",
@@ -66,6 +69,20 @@ const hospitals = [
 		facility_type: "MCH( Maternity and Children's Health) Center",
 		rating: "4.5 (11)",
 		accepts: "Tilla Health",
+		country: "Ethiopia",
+	},
+	{
+		name: "Comfort Health and Wellness Clinic",
+		hours:
+			"Open on Tuesday, Wednesday, Friday from 8 am to 5 pm & Saturday by appointment",
+		location: "101 S Whiting Street #104, Alexandria, VA 22304. ",
+		phone: ["+1(703)-574-888 or +1(703)-574-8881"],
+		imageUrl: IMAGES.comfort,
+		facility_affiliation: "Private",
+		facility_type: "Medical Clinic",
+		rating: "4.5 (11)",
+		accepts: "Tilla Health",
+		country: "USA",
 	},
 ];
 
@@ -75,10 +92,12 @@ export default function Home() {
 		affiliation: string[];
 		facilityType: string[];
 		acceptsTillaHealth: boolean;
+		selectedCountry: string;
 	}>({
 		affiliation: [],
 		facilityType: [],
 		acceptsTillaHealth: false,
+		selectedCountry: "",
 	});
 	const [sortBy, setSortBy] = useState("name");
 
@@ -90,7 +109,9 @@ export default function Home() {
 					filters.affiliation.includes(hospital.facility_affiliation)) &&
 				(filters.facilityType.length === 0 ||
 					filters.facilityType.includes(hospital.facility_type)) &&
-				(!filters.acceptsTillaHealth || hospital.accepts === "Tilla Health")
+				(!filters.acceptsTillaHealth || hospital.accepts === "Tilla Health") &&
+				(filters.selectedCountry === "" ||
+					hospital.country === filters.selectedCountry)
 			);
 		})
 		.sort((a, b) => {
@@ -221,23 +242,56 @@ export default function Home() {
 									</Select>
 								</div>
 							</div>
-							<div className="flex items-center space-x-2">
-								<Checkbox
-									id="accepts-tilla-health"
-									checked={filters.acceptsTillaHealth}
-									onCheckedChange={(checked: boolean) =>
-										setFilters((prev) => ({
-											...prev,
-											acceptsTillaHealth: checked,
-										}))
-									}
-								/>
-								<label
-									htmlFor="accepts-tilla-health"
-									className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-								>
-									Accepts Tilla Health
-								</label>
+							<div>
+								<Label className="text-primary text-md mb-4 block">
+									Location & Coverage
+								</Label>
+								<div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 bg-muted/30 rounded-lg">
+									{/* Countries Section */}
+									<div className="space-y-3">
+										<Label className="text-sm text-muted-foreground">
+											Select Countries
+										</Label>
+										<div className="flex items-center space-x-4">
+											<div className="flex items-center space-x-2">
+												<Checkbox
+													id="country-ethiopia"
+													checked={filters.selectedCountry === "Ethiopia"}
+													onCheckedChange={(checked: boolean) =>
+														setFilters((prev) => ({
+															...prev,
+															selectedCountry: checked ? "Ethiopia" : "",
+														}))
+													}
+												/>
+												<label
+													htmlFor="country-ethiopia"
+													className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+												>
+													Ethiopia
+												</label>
+											</div>
+											<div className="flex items-center space-x-2">
+												<Checkbox
+													id="country-usa"
+													checked={filters.selectedCountry === "USA"}
+													onCheckedChange={(checked: boolean) =>
+														setFilters((prev) => ({
+															...prev,
+															selectedCountry: checked ? "USA" : "",
+														}))
+													}
+												/>
+												<label
+													htmlFor="country-usa"
+													className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+												>
+													USA
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

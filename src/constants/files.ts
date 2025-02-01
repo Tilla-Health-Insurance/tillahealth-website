@@ -12,6 +12,7 @@ import blackLion from "../../public/images/blackLion.png";
 import logoredtransparent from "../../public/images/bold-logo.png";
 import brokerportal from "../../public/images/brokerportal.jpeg";
 import careLandHospital from "../../public/images/careland.jpeg";
+import comfort from "../../public/images/comfort.png";
 import companyportal from "../../public/images/company-portal.png";
 import diasporaHero2 from "../../public/images/diasporaHero.jpg";
 import diaspora from "../../public/images/diasporaOne.png";
@@ -120,4 +121,5 @@ export const IMAGES = Object.freeze({
 	semahHospital: semahHospital,
 	waterDrop: waterDrop,
 	umbrella: umbrella,
+	comfort: comfort,
 });

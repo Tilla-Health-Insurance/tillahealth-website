@@ -36,10 +36,32 @@ export function ServicesSection({
 					className="text-center mb-12 mt-12 relative"
 				>
 					<div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-primary/10 blur-3xl -z-10" />
-					<h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-primary/80 bg-clip-text ">
-						{title}
-					</h2>
-					<p className="max-w-2xl mx-auto text-lg text-muted-foreground leading-relaxed font-light tracking-wide">
+					<div className="relative inline-block">
+						<h2 className="text-4xl font-bold mb-4">{title}</h2>
+						<div className="relative h-1">
+							<motion.div
+								className="absolute left-1/2 h-full bg-primary rounded-full"
+								initial={{ width: 0, x: "-50%" }}
+								animate={{ width: "40%", x: "-50%" }}
+								transition={{
+									duration: 1,
+									delay: 0.5,
+									ease: "easeOut",
+								}}
+							/>
+							<motion.div
+								className="absolute left-1/2 h-full bg-primary/30 rounded-full"
+								initial={{ width: 0, x: "-50%" }}
+								animate={{ width: "60%", x: "-50%" }}
+								transition={{
+									duration: 1.2,
+									delay: 0.3,
+									ease: "easeOut",
+								}}
+							/>
+						</div>
+					</div>
+					<p className="max-w-2xl mx-auto text-lg text-muted-foreground leading-relaxed font-light tracking-wide mt-6">
 						{description}
 					</p>
 					<div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-transparent via-primary/50 to-transparent" />

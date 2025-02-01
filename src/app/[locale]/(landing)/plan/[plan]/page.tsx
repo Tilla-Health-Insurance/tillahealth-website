@@ -22,6 +22,7 @@ type PlanKey =
 interface Plan {
 	title: string;
 	description: string;
+	subtitle?: string;
 	whychoosetitle?: string;
 	whychoose?: string[];
 	whychoosedesc?: any;
@@ -276,6 +277,8 @@ const plans: Record<PlanKey, Plan> = {
 	},
 	"family-individual-health-plan": {
 		title: "Family and Individual Health Plan",
+		subtitle:
+			"Comprehensive and flexible coverage tailored to your unique healthcare needs. Ensure the best care for you and your loved ones with Tilla Health Insurance",
 		description:
 			"At Tilla Health Insurance, we understand that families and individuals have unique healthcare needs. That’s why we’ve designed health insurance plans that offer comprehensive, flexible coverage tailored to your lifestyle. Whether you are seeking coverage for yourself or your entire family, our plans are structured to ensure you get the best care, wherever you are. With a variety of coverage options, our plans offer peace of mind, knowing that you and your loved ones have access to quality healthcare.",
 		whychoosetitle: "Our Health Insurance Plan",
@@ -292,6 +295,8 @@ const plans: Record<PlanKey, Plan> = {
 	},
 	"private-sector-health-plan": {
 		title: "Private Sector Health Plan",
+		subtitle:
+			" Flexible and comprehensive coverage is designed to support your organization’s goals. Ensure your employees and their families receive quality healthcare with Tilla Health Insurance.",
 		description:
 			"At Tilla Health Insurance, we recognize the importance of keeping your workforce healthy, productive, and engaged. Our Private Sector Health Plans are tailored to meet the diverse healthcare needs of businesses, offering comprehensive coverage for employees and their families. Whether you’re managing a small business or a large corporation, Tilla Health provides flexible and affordable health insurance solutions designed to support your organization’s goals.With a wide range of plans and access to an extensive provider network, Tilla Health ensures that your employees receive quality healthcare when they need it most.",
 		whychoosetitle: "Why Choose Tilla Health?",
@@ -310,6 +315,8 @@ const plans: Record<PlanKey, Plan> = {
 	},
 	"federal-employee-program": {
 		title: "Federal Employee Program (FEP)",
+		subtitle:
+			"Tailored health insurance for federal employees, offering flexible and comprehensive coverage to support you and your family’s healthcare needs.",
 		description:
 			"At Tilla Health Insurance, we understand the critical role federal employees play in supporting national goals and delivering essential services. That’s why we’ve developed the Federal Employee Program (FEP) Health Plan—a comprehensive and flexible insurance plan designed to meet the unique healthcare needs of federal employees and their families. Our plans prioritize access to quality healthcare, affordability, and peace of mind, ensuring that those who serve their nation can focus on their responsibilities with confidence.",
 		whychoosetitle: "Why Choose the FEP Health Plan?",
@@ -328,6 +335,8 @@ const plans: Record<PlanKey, Plan> = {
 	},
 	"international-plan": {
 		title: "International Plan",
+		subtitle:
+			"Comprehensive and flexible healthcare tailored for the international community living and working in Ethiopia. Ensure your well-being with reliable medical coverage and local support.",
 		description:
 			"Exclusively Designed for the International Community Living and Working in Ethiopia Tilla Health Insurance is proud to introduce our International Plan, specially tailored to meet the needs of expatriates, diplomats, international business professionals, and their families living in Ethiopia. This comprehensive plan offers peace of mind by ensuring seamless access to healthcare that meets global standards, all while providing local support in Ethiopia. Our International Plan is designed to offer unmatched flexibility and coverage to international clients, ensuring they receive the highest quality healthcare, both locally and internationally, when needed.",
 		whychoosetitle: "Why Choose the International Plan?",

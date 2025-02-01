@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+import { motion } from "framer-motion";
 import {
 	ClipboardCheck,
 	Clock,
@@ -76,14 +77,21 @@ export function BenefitsSection() {
 	return (
 		<section className="pb-24 bg-background">
 			<div className="container px-4 md:px-6">
-				<div className="relative w-full flex items-center justify-center  mb-[-12] rounded-xl overflow-hidden mx-auto">
-					<Image
-						src={IMAGES.umbrella}
-						alt="Why Choose Tilla Health"
-						className="object-contain"
-						width={700}
-						height={300}
-					/>
+				<div className="relative w-full flex items-center justify-center mb-[-12] rounded-xl overflow-hidden mx-auto">
+					<motion.div
+						initial={{ scale: 0.8 }}
+						whileInView={{ scale: 1 }}
+						transition={{ duration: 1.2, ease: "easeOut" }}
+						viewport={{ once: true }}
+					>
+						<Image
+							src={IMAGES.umbrella}
+							alt="Why Choose Tilla Health"
+							className="object-contain"
+							width={700}
+							height={300}
+						/>
+					</motion.div>
 					{/* <div className="absolute inset-0 bg-black/40" /> */}
 				</div>
 				<h3 className="text-sm font-semibold text-primary mb-4 text-center">

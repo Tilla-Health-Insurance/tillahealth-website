@@ -17,6 +17,7 @@ import {
 interface Plan {
 	title: string;
 	description: string;
+	subtitle?: string;
 	whychoosetitle?: string;
 	whychoose?: string[];
 	whychoosedesc?: any;
@@ -55,7 +56,7 @@ export default function PlanScreen({ plan }: PlanProps) {
 	return (
 		<div className="min-h-screen flex flex-col">
 			<main>
-				<section className="relative text-foreground min-h-[300px] sm:min-h-[400px] md:min-h-[500px] flex items-center justify-center mt-20 sm:mt-0 py-12">
+				<section className="relative text-foreground min-h-[180px] sm:min-h-[260px] md:min-h-[340px] flex items-center justify-center mt-16 sm:mt-0 py-6">
 					<Image
 						src={plan.image}
 						alt="Plan Background"
@@ -66,38 +67,55 @@ export default function PlanScreen({ plan }: PlanProps) {
 					/>
 					<div className="absolute inset-0 bg-black/50"></div>
 					<div className="container mx-auto relative z-10 px-4 sm:px-6 md:px-8">
-						<div className="max-w-5xl space-y-3 sm:space-y-4 md:space-y-6 mx-auto">
-							<h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight text-white text-center">
+						<div className="max-w-4xl space-y-2 sm:space-y-3 md:space-y-4 mx-auto">
+							<h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight leading-tight text-white text-center">
 								{plan.title}
 							</h1>
-							<p className="text-sm sm:text-base md:text-lg lg:text-xl text-white text-left sm:text-center">
-								{plan.description}
+							<p className="text-card-foreground leading-relaxed text-white text-center flex-grow">
+								{plan.subtitle}
 							</p>
 						</div>
 					</div>
 				</section>
 
-				<section className="py-16 container">
+				<section className="py-12 container">
 					{plan.whychoose && (
-						<div className="grid md:grid-cols-2 gap-12 items-center">
-							<div className="relative h-[80vh] w-full">
-								<Image
-									src={plan.image2}
-									alt="Family under umbrella illustration"
-									layout="fill" // Use layout="fill" to cover the parent container
-									objectFit="contain" // Ensures the image covers the container while maintaining aspect ratio
-									className="rounded-lg" // Optional: add any styling you want
-								/>
-							</div>
+						<div className="grid md:grid-cols-2 gap-8 items-stretch">
+							<motion.div
+								initial={{ opacity: 0, y: 20 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								className="relative group h-full"
+							>
+								<div className="absolute -inset-0.5 bg-gradient-to-r from-primary/10 to-primary/20 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-300"></div>
+								<div className="relative bg-background/95 backdrop-blur-sm p-6 rounded-lg shadow-md group-hover:shadow-lg transition-all duration-300 h-full flex flex-col">
+									<div className="relative h-48 w-48 mx-auto mb-6 rounded-full overflow-hidden flex-shrink-0">
+										<Image
+											src={plan.image2}
+											alt="Plan illustration"
+											fill
+											sizes="(max-width: 768px) 50vw, 192px"
+											className="object-cover object-center  duration-500"
+										/>
+									</div>
+									<p className="text-card-foreground leading-relaxed text-justify flex-grow">
+										{plan.description}
+									</p>
+								</div>
+							</motion.div>
 
-							<div className="space-y-6">
-								<h3 className="text-primary">Tilla Health</h3>
-								<h2 className="text-3xl font-bold">{plan.whychoosetitle}</h2>
-								<div className="space-y-4">
+							<div className="relative bg-background/95 backdrop-blur-sm p-6 rounded-lg shadow-md group-hover:shadow-lg transition-all duration-300 flex flex-col h-full">
+								<h3 className="text-primary text-sm">Tilla Health</h3>
+								<h2 className="text-2xl font-bold mb-4">
+									{plan.whychoosetitle}
+								</h2>
+								<div className="space-y-3 flex-grow">
 									{plan.whychoose?.map((item, index) => (
-										<div className="text-muted-foreground  flex" key={index}>
-											<CheckCircle className="h-6 w-6 text-primary mr-3 mt-1 flex-shrink-0" />
-											<span className="text-card-foreground">{item}</span>
+										<div className="text-muted-foreground flex" key={index}>
+											<CheckCircle className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
+											<span className="text-card-foreground text-sm">
+												{item}
+											</span>
 										</div>
 									))}
 								</div>

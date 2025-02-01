@@ -289,6 +289,52 @@ export default function HeroSlider() {
 				transition={{ duration: 0.5 }}
 				className="relative min-h-[100vh] flex items-center"
 			>
+				{/* Navigation Buttons - Combined container */}
+				<div className="absolute md:hidden bottom-8 left-0 right-0 z-50 flex justify-center items-center space-x-4">
+					<Button
+						variant="outline"
+						size="icon"
+						className="rounded-full w-12 h-12 border-white/20 text-white bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105"
+						onClick={handlePrev}
+						aria-label="Previous slide"
+					>
+						<ChevronLeft className="h-6 w-6" />
+					</Button>
+					<Button
+						variant="outline"
+						size="icon"
+						className="rounded-full w-12 h-12 border-white/20 text-white bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105"
+						onClick={handleNext}
+						aria-label="Next slide"
+					>
+						<ChevronRight className="h-6 w-6" />
+					</Button>
+				</div>
+
+				{/* Desktop navigation buttons */}
+				<div className="absolute hidden md:block top-1/2 left-4 -translate-y-1/2 z-50">
+					<Button
+						variant="outline"
+						size="icon"
+						className="rounded-full w-14 h-14 border-white/20 text-white bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105"
+						onClick={handlePrev}
+						aria-label="Previous slide"
+					>
+						<ChevronLeft className="h-6 w-6" />
+					</Button>
+				</div>
+				<div className="absolute hidden md:block top-1/2 right-4 -translate-y-1/2 z-50">
+					<Button
+						variant="outline"
+						size="icon"
+						className="rounded-full w-14 h-14 border-white/20 text-white bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105"
+						onClick={handleNext}
+						aria-label="Next slide"
+					>
+						<ChevronRight className="h-6 w-6" />
+					</Button>
+				</div>
+
 				{/* Background Image with Modern Gradient Overlay */}
 				<div className="absolute inset-0">
 					<AnimatePresence mode="wait">
@@ -324,7 +370,7 @@ export default function HeroSlider() {
 				{/* Content Container with Modern Layout */}
 				<div className="relative container mx-auto px-4 py-12 md:py-20">
 					<div className="flex flex-col gap-12">
-						<div className="w-full lg:w-[60%] mt-8 lg:mt-16">
+						<div className="w-full lg:w-[60%] mt-8 lg:mt-16 lg:ml-16">
 							<AnimatePresence mode="wait">
 								<motion.div
 									key={currentIndex}
@@ -446,28 +492,6 @@ export default function HeroSlider() {
 											aria-label={`Go to slide ${index + 1}`}
 										/>
 									))}
-								</div>
-
-								{/* Navigation Buttons */}
-								<div className="flex items-center justify-end gap-6">
-									<Button
-										variant="outline"
-										size="icon"
-										className="rounded-full w-14 h-14 border-white/20 text-white bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105"
-										onClick={handlePrev}
-										aria-label="Previous slide"
-									>
-										<ChevronLeft className="h-6 w-6" />
-									</Button>
-									<Button
-										variant="outline"
-										size="icon"
-										className="rounded-full w-14 h-14 border-white/20 text-white bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105"
-										onClick={handleNext}
-										aria-label="Next slide"
-									>
-										<ChevronRight className="h-6 w-6" />
-									</Button>
 								</div>
 							</div>
 						</div>

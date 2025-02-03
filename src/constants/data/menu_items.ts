@@ -1,15 +1,16 @@
 import {
+	Ambulance,
 	BookOpen,
-	Bot,
 	BriefcaseMedical,
 	Building,
 	Building2,
-	Coins,
 	Globe,
 	Heart,
 	Home,
 	Luggage,
 	Newspaper,
+	Phone,
+	PhoneCall,
 	Stethoscope,
 	User2,
 	Users,
@@ -194,7 +195,54 @@ export const menuItems = [
 			},
 		},
 	},
-
+	{
+		title: "Telehealth",
+		icon: Stethoscope,
+		href: "/telehealth",
+		image: IMAGES.telehealth,
+		content: {
+			header: "Healthcare Solutions",
+			description: "Comprehensive healthcare services for every need.",
+			sections: [
+				{
+					title: "Telehealth Services",
+					links: [
+						{
+							label: "Telehealth",
+							href: "/telehealth",
+							description:
+								"Access healthcare services from the comfort of your home.",
+							icon: Phone,
+						},
+						{
+							label: "Bridgecare",
+							href: "/bridgecare",
+							description:
+								"Premium telehealth services for individuals and families.",
+							icon: PhoneCall,
+							sublinks: [
+								{
+									label: "Our Health Insurance Plans",
+									href: "/plan/details/our-health-insurance-plan-fam",
+								},
+							],
+						},
+					],
+				},
+			],
+			footer: {
+				title: "Explore affordable healthcare plans",
+				description: "Find the right plan for you and your family.",
+				learnMoreLabel: "Learn More",
+			},
+		},
+	},
+	{
+		title: "Transportation",
+		icon: Ambulance,
+		href: "/transportation",
+		image: IMAGES.transport2,
+	},
 	{
 		title: "About Us",
 		icon: Users,
@@ -262,6 +310,17 @@ export const menuItems = [
 								// { label: "Future Plans", href: "#" },
 							],
 						},
+						{
+							label: "Latest News",
+							href: "/news",
+							description: "Stay healthy with regular checkups.",
+							icon: Newspaper,
+							sublinks: [
+								// { label: "Annual Physicals Update", href: "/news" },
+								// { label: "Vaccination Campaign", href: "/news" },
+								// { label: "Health Screening Events", href: "/news" },
+							],
+						},
 					],
 				},
 			],
@@ -273,64 +332,64 @@ export const menuItems = [
 			},
 		},
 	},
-	{
-		title: "News and Updates",
-		icon: Newspaper,
-		href: "/news",
-		image: IMAGES.brokerportal,
-		content: {
-			header: "Latest Healthcare News",
-			description: "Stay informed with the latest updates in healthcare.",
-			sections: [
-				{
-					title: "Recent Announcements",
-					links: [
-						{
-							label: "Latest News",
-							href: "/news",
-							description: "Stay healthy with regular checkups.",
-							icon: Bot,
-							sublinks: [
-								// { label: "Annual Physicals Update", href: "/news" },
-								// { label: "Vaccination Campaign", href: "/news" },
-								// { label: "Health Screening Events", href: "/news" },
-							],
-						},
-						{
-							label: "Affordability News",
-							href: "/news",
-							description: "Expert care for specific conditions.",
-							icon: Coins,
-							sublinks: [
-								// { label: "Cardiology Innovations", href: "/news" },
-								// { label: "Orthopedic Advances", href: "/news" },
-								// { label: "Pediatric Care Updates", href: "/news" },
-							],
-						},
-						{
-							label: "Social Responsiblity",
-							href: "/social-responsiblity",
-							description: "Expert care for specific conditions.",
-							icon: Heart,
-							sublinks: [
-								// { label: "Cardiology Innovations", href: "/news" },
-								// { label: "Orthopedic Advances", href: "/news" },
-								// { label: "Pediatric Care Updates", href: "/news" },
-							],
-						},
-					],
-				},
-			],
-			footer: {
-				title: "Stay Updated with Our News",
-				description: "Sign up for newsletters to receive the latest updates.",
-				learnMoreLabel: "Subscribe Now",
-			},
-		},
-	},
-	{
-		title: "Find A Provider",
-		icon: Stethoscope,
-		href: "/find-a-provider", // Add direct href for Home
-	},
+	// {
+	// 	title: "News and Updates",
+	// 	icon: Newspaper,
+	// 	href: "/news",
+	// 	image: IMAGES.brokerportal,
+	// 	content: {
+	// 		header: "Latest Healthcare News",
+	// 		description: "Stay informed with the latest updates in healthcare.",
+	// 		sections: [
+	// 			{
+	// 				title: "Recent Announcements",
+	// 				links: [
+	// 					{
+	// 						label: "Latest News",
+	// 						href: "/news",
+	// 						description: "Stay healthy with regular checkups.",
+	// 						icon: Bot,
+	// 						sublinks: [
+	// 							// { label: "Annual Physicals Update", href: "/news" },
+	// 							// { label: "Vaccination Campaign", href: "/news" },
+	// 							// { label: "Health Screening Events", href: "/news" },
+	// 						],
+	// 					},
+	// 					{
+	// 						label: "Affordability News",
+	// 						href: "/news",
+	// 						description: "Expert care for specific conditions.",
+	// 						icon: Coins,
+	// 						sublinks: [
+	// 							// { label: "Cardiology Innovations", href: "/news" },
+	// 							// { label: "Orthopedic Advances", href: "/news" },
+	// 							// { label: "Pediatric Care Updates", href: "/news" },
+	// 						],
+	// 					},
+	// 					{
+	// 						label: "Social Responsiblity",
+	// 						href: "/social-responsiblity",
+	// 						description: "Expert care for specific conditions.",
+	// 						icon: Heart,
+	// 						sublinks: [
+	// 							// { label: "Cardiology Innovations", href: "/news" },
+	// 							// { label: "Orthopedic Advances", href: "/news" },
+	// 							// { label: "Pediatric Care Updates", href: "/news" },
+	// 						],
+	// 					},
+	// 				],
+	// 			},
+	// 		],
+	// 		footer: {
+	// 			title: "Stay Updated with Our News",
+	// 			description: "Sign up for newsletters to receive the latest updates.",
+	// 			learnMoreLabel: "Subscribe Now",
+	// 		},
+	// 	},
+	// },
+	// {
+	// 	title: "Find A Provider",
+	// 	icon: Stethoscope,
+	// 	href: "/find-a-provider", // Add direct href for Home
+	// },
 ];

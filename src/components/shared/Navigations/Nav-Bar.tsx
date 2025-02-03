@@ -5,6 +5,7 @@ import { useTypewriter } from "react-simple-typewriter";
 
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ui/custom/modeToggle";
+import { Link } from "@/navigation";
 
 import LocaleSwitcher from "../DropDown/LocaleSwitcher";
 
@@ -35,6 +36,11 @@ const Navbar = () => {
 						<span className="sm:flex hidden text-xs">
 							Support@tillahealth.com
 						</span>
+					</Button>
+					<Button className="h-6 text-white" variant="ghost">
+						<Link href="/find-a-provider">
+							<span className="sm:flex hidden text-xs">Find A Provider</span>
+						</Link>
 					</Button>
 					<ModeToggle classStyle="h-6 w-6 border-none dark:bg-black" />
 					<LocaleSwitcher />

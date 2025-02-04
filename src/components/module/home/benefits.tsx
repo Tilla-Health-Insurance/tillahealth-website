@@ -1,6 +1,3 @@
-import Image from "next/image";
-
-import { motion } from "framer-motion";
 import {
 	ClipboardCheck,
 	Clock,
@@ -13,7 +10,6 @@ import {
 } from "lucide-react";
 
 import { Card, CardContent } from "@/components/ui/card";
-import { IMAGES } from "@/constants/files";
 
 import { SectionHeading } from "./section-heading";
 
@@ -75,10 +71,10 @@ const benefits = [
 ];
 export function BenefitsSection() {
 	return (
-		<section className="pb-24 bg-background">
+		<section className="pb-24 bg-background lg:mt-10">
 			<div className="container px-4 md:px-6">
 				<div className="relative w-full flex items-center justify-center mb-[-12] rounded-xl overflow-hidden mx-auto">
-					<motion.div
+					{/* <motion.div
 						initial={{ scale: 0.8 }}
 						whileInView={{ scale: 1 }}
 						transition={{ duration: 1.2, ease: "easeOut" }}
@@ -91,7 +87,7 @@ export function BenefitsSection() {
 							width={700}
 							height={300}
 						/>
-					</motion.div>
+					</motion.div> */}
 					{/* <div className="absolute inset-0 bg-black/40" /> */}
 				</div>
 				<h3 className="text-sm font-semibold text-primary mb-4 text-center">
@@ -100,7 +96,7 @@ export function BenefitsSection() {
 				<SectionHeading
 					title="Why Choose Tilla Health"
 					description="Transforming healthcare delivery with innovation and accessibility"
-					className="text-center mb-12"
+					className="text-center mb-12 lg:text-black"
 				/>
 				<div className="grid gap-6 grid-cols-1 lg:grid-cols-3 md:max-w-6xl mx-auto">
 					{benefits.map((benefit) => (

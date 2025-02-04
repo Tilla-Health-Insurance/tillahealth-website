@@ -1,7 +1,6 @@
 import cureHospital from "../../public/images/Cure.jpeg";
 import interHero from "../../public/images/Diverse Friends Gathering.jpeg";
 import familyHero from "../../public/images/FamilyHero.png";
-import feredalHero from "../../public/images/FederalHero.jpeg";
 import cardback from "../../public/images/ID-new-logo-back.png";
 import cadfront from "../../public/images/ID-new-logo-front.png";
 import nordicHospital from "../../public/images/Nordic.jpeg";
@@ -19,6 +18,7 @@ import diaspora from "../../public/images/diasporaOne.png";
 import diasporaconnect1 from "../../public/images/diasporaconnect1.jpg";
 import diasporaconnect2 from "../../public/images/diasporaconnect2.jpg";
 import diasporaHero from "../../public/images/diasporapeople.jpeg";
+import dreden from "../../public/images/dreden.png";
 import member3 from "../../public/images/falily.png";
 import family from "../../public/images/familyOne.png";
 import federal from "../../public/images/gov.png";
@@ -41,6 +41,7 @@ import ngo from "../../public/images/ngoOne.png";
 import oldpeople from "../../public/images/oldpeople.jpg";
 import socialres4 from "../../public/images/oldperon.jpeg";
 import paulosLog from "../../public/images/paulos.png";
+import feredalHero from "../../public/images/peopletalking.png";
 import portal from "../../public/images/portal.jpeg";
 import privateSector from "../../public/images/private_sector.png";
 import providerportal from "../../public/images/providerportal.jpeg";
@@ -61,7 +62,9 @@ import bg2 from "../../public/images/young-handsome-physician-medical-robe-with-
 export const DOCS = Object.freeze({
 	OrgRegistration: "../../public/docs/company.xlsx",
 });
-
+export const VIDEOS = Object.freeze({
+	telehealth: "../../public/videos/telehealth.mp4",
+});
 export const IMAGES = Object.freeze({
 	blueLogo: logobluetransparent,
 	redLogo: logoredtransparent,
@@ -122,4 +125,5 @@ export const IMAGES = Object.freeze({
 	waterDrop: waterDrop,
 	umbrella: umbrella,
 	comfort: comfort,
+	dreden: dreden,
 });

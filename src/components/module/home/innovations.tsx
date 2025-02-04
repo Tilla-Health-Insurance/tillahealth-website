@@ -31,15 +31,15 @@ const innovations = [
 
 export function InnovationsSection() {
 	return (
-		<section className="pt-24 pb-6 relative overflow-hidden">
+		<section className="pt-24 pb-32 relative overflow-hidden">
 			<div className="container px-4 md:px-6">
-				<h3 className="text-sm font-semibold text-primary mb-4 text-center hover:tracking-wider transition-all duration-300">
-					{">>"}Technologies {"<<"}
-				</h3>
+				{/* <h3 className="text-sm font-semibold text-primary lg:text-white mb-4 text-center hover:tracking-wider transition-all duration-300">
+					{">>"}Technologies{"<<"}
+				</h3> */}
 				<SectionHeading
 					title="Digital Health Innovation"
 					description="Leveraging technology to transform healthcare delivery across Ethiopia"
-					className="text-center mb-12"
+					className="text-center mb-12 mt-10"
 				/>
 				<div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 max-w-6xl mx-auto">
 					{innovations.map((item) => (
@@ -107,6 +107,10 @@ export function InnovationsSection() {
 						fill="red"
 					/>
 				</svg>
+			</div> */}
+
+			{/* <div className="hidden lg:block">
+				<MorphingShape />
 			</div> */}
 		</section>
 	);

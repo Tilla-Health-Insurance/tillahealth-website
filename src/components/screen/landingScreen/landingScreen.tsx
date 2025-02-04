@@ -17,14 +17,15 @@ import News from "@/components/module/home/News";
 import { AboutSection } from "@/components/module/home/about";
 // import MemberCardSection from "@/components/module/home/member-card";
 import AdditionalServicesSection from "@/components/module/home/addtional-section";
-import { BenefitsSection } from "@/components/module/home/benefits";
 // import HeroTest from "@/components/module/home/herotest";
+import { BenefitsSection } from "@/components/module/home/benefits";
 import HeroSlider from "@/components/module/home/herotest";
 import { InnovationsSection } from "@/components/module/home/innovations";
 import MobileAppSection from "@/components/module/home/mobile-app";
 import { PortalsSection } from "@/components/module/home/portal-section";
 import HealthPlans from "@/components/module/home/servicestest";
 import TextSection from "@/components/module/home/text-section";
+import Umbrella from "@/components/ui/custom/umbrella";
 import { IMAGES } from "@/constants/files";
 
 export default function HomeScreen() {
@@ -131,8 +132,12 @@ export default function HomeScreen() {
 				<AboutSection />
 				{/* <AboutUsSection/> */}
 				<InnovationsSection />
-
-				<BenefitsSection />
+				<div className=" sm:hidden">
+					<BenefitsSection />
+				</div>
+				<div className="hidden md:block">
+					<Umbrella />
+				</div>
 				{/* <MemberCardSection /> */}
 				<PortalsSection />
 				{/* Services Section */}

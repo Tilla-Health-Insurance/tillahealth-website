@@ -84,6 +84,17 @@ const hospitals = [
 		accepts: "Tilla Health",
 		country: "USA",
 	},
+	{
+		name: "DR. EDEN HEALTHCARE SERVICES LLC",
+		location: " 8115 Fenton St, Silver Spring, MD 20910",
+		phone: [" 301-328-2995 ", " Fax: 240-232-1224 "],
+		imageUrl: IMAGES.dreden,
+		facility_affiliation: "Private",
+		facility_type: "Medical Clinic",
+		rating: "4.2 (4)",
+		accepts: "Tilla Health",
+		country: "USA",
+	},
 ];
 
 export default function Home() {

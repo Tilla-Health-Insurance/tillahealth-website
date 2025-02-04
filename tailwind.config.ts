@@ -94,6 +94,20 @@ const config = {
 				"accordion-up": "accordion-up 0.2s ease-out",
 			},
 		},
+		keyframes: {
+			"morph-convex": {
+				"0%": { borderRadius: "100% 100% 1% 1% / 100% 100% 1% 1%" },
+				"100%": { borderRadius: "1% 1% 100% 100% / 1% 1% 100% 100%" },
+			},
+			"morph-concave": {
+				"0%": { borderRadius: "1% 1% 100% 100% / 1% 1% 100% 100%" },
+				"100%": { borderRadius: "100% 100% 1% 1% / 100% 100% 1% 1%" },
+			},
+		},
+		animation: {
+			"morph-to-convex": "morph-convex 1s ease-in-out forwards",
+			"morph-to-concave": "morph-concave 1s ease-in-out forwards",
+		},
 	},
 	plugins: [
 		require("tailwindcss-animate"),

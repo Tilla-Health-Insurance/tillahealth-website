@@ -464,8 +464,8 @@ export default function TransportationScreen() {
 								<TitleUnderLine className="bg-white/80" />
 							</h2>
 							<p className="mt-6 text-xl text-white/80 max-w-2xl mx-auto">
-								Our booking system is coming soon! We're working hard to bring
-								you a seamless transportation booking experience.
+								Our booking system is coming soon! We&apos;re working hard to
+								bring you a seamless transportation booking experience.
 							</p>
 						</div>
 

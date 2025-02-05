@@ -53,7 +53,7 @@ export function InnovationsSection() {
 									alt="background"
 									fill
 									sizes="(max-width: 1024px) 50vw, 30vw"
-									className="absolute inset-0 object-cover invert drop-shadow-md -z-10 scale-150 transition-transform duration-500 p-4"
+									className="absolute inset-0 object-cover drop-shadow-md -z-10 scale-150 transition-transform duration-500 p-4 brightness-[100] contrast-100 invert dark:invert-0"
 								/>
 								<div className="flex flex-col items-center justify-center mt-2 h-full relative z-10">
 									<item.icon className="w-8 h-8 text-primary mb-10 group-hover:rotate-6 transition-transform duration-300" />
@@ -74,7 +74,7 @@ export function InnovationsSection() {
 										alt="background"
 										fill
 										sizes="80vw"
-										className="absolute inset-0 object-contain invert drop-shadow-lg -z-10 scale-90 group-hover:scale-130 transition-transform duration-500"
+										className="absolute inset-0 object-contain drop-shadow-lg -z-10 scale-90 group-hover:scale-130 transition-transform duration-500 brightness-[100] contrast-100 invert dark:invert-0"
 									/>
 									<div className="flex items-center justify-center h-full">
 										<item.icon className="w-10 h-10 mt-5 text-primary group-hover:rotate-6 transition-transform duration-300" />

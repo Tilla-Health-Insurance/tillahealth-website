@@ -1,9 +1,14 @@
 .bgColor {
-	--bg-color: #ffffff; /* Changed to white */
-	--line-color: #4a4a4a;
+	--bg-color: transparent; /* Changed to white */
+	--line-color: rgba(
+		255,
+		255,
+		255,
+		0.8
+	); /* Changed from #4a4a4a to semi-transparent white */
 	--handle-color: #8b0000;
-	--umbrella-color: #cc0000; /* Darker red for more depth */
-	--umbrella-highlight: #d2122e; /* Brighter highlight for contrast */
+	--umbrella-color: #132b3f; /* Dark blue base color */
+	--umbrella-highlight: #1e4260; /* Lighter blue highlight derived from base */
 }
 
 .container {
@@ -128,9 +133,9 @@
 		var(--umbrella-color) 0%,
 		var(--umbrella-highlight) 35%,
 		var(--umbrella-color) 65%,
-		#990000 100%
+		var(--umbrella-color) 100%
 	);
-	border: 3px solid var(--line-color);
+	border: 1px solid var(--line-color); /* Changed from 3px to 1px */
 	box-shadow:
 		inset 0 20px 30px rgba(255, 255, 255, 0.4),
 		inset 0 -15px 30px rgba(0, 0, 0, 0.4),
@@ -149,7 +154,7 @@
 		transparent 50%,
 		rgba(0, 0, 0, 0.2) 100%
 	);
-	border: 3px solid var(--line-color);
+	border: 1px solid var(--line-color); /* Changed from 3px to 1px */
 	pointer-events: none;
 }
 
@@ -243,7 +248,7 @@
 .messageTitle {
 	font-size: 2.25rem;
 	font-weight: 800;
-	color: #e31837;
+	color: var(--umbrella-highlight);
 	margin-bottom: 0.75rem;
 	letter-spacing: -0.02em;
 }

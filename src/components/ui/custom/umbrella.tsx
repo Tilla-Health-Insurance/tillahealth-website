@@ -13,6 +13,7 @@ import {
 	Users,
 } from "lucide-react";
 
+import { TitleUnderLine } from "@/components/shared/Decorations/TitleUnderLine";
 import styles from "@/styles/umbrella.module.css";
 
 const benefits = [
@@ -101,39 +102,48 @@ export default function Umbrella() {
 		return () => window.removeEventListener("scroll", handleScroll);
 	}, [handleScroll]);
 
-	const toggleUmbrella = () => {
-		setIsClosed(!isClosed);
-	};
+	// const toggleUmbrella = () => {
+	// 	setIsClosed(!isClosed);
+	// };
 
 	return (
-		<div className={`${styles.container} ${styles.bgColor}`}>
+		<div className={`${styles.container} ${styles.bgColor} dark:bg-background`}>
 			<div className={styles.rain}></div>
 			<div
-				className={`${styles.umbrella} ${isClosed ? styles.closed : ""}`}
-				onClick={toggleUmbrella}
+				className={`${styles.umbrella} ${isClosed ? styles.closed : ""} dark:bg-red`}
 			>
-				<div className={styles.tip}></div>
-				<div className={styles.top}></div>
-				<div className={styles.handle}></div>
+				<div className={`${styles.tip} dark:bg-background`}></div>
+				<div className={`${styles.top} dark:bg-background`}></div>
+				<div className={`${styles.handle} dark:bg-background`}></div>
 				<div
-					className={`${styles.umbrellaMessage} ${!isClosed ? styles.messageVisible : ""}`}
+					className={`${styles.umbrellaMessage} ${!isClosed ? styles.messageVisible : ""} dark:bg-background`}
 				>
-					<div className={styles.messageContent}>
-						<h2 className={styles.messageTitle}>Why Choose Tilla Health</h2>
-						<p className={styles.messageText}>
+					<div className={`${styles.messageContent} dark:bg-background`}>
+						<h2 className={"text-primary text-5xl font-bold"}>
+							Why Choose Tilla Health
+							<TitleUnderLine width={"20%"} />
+						</h2>
+						<p className={"text-muted-foreground text-lg font-medium"}>
 							Transforming healthcare delivery with innovation and accessibility
 						</p>
 
-						<div className={styles.featureGrid}>
+						<div className="grid grid-cols-3 gap-4 p-2">
 							{benefits.map((benefit, index) => {
 								const Icon = benefit.icon;
 								return (
-									<div key={index} className={styles.featureItem}>
-										<div className={styles.featureIcon}>
-											<Icon className={styles.icon} />
+									<div
+										key={index}
+										className="flex flex-col items-center p-4 rounded-lg bg-white/5 backdrop-blur-sm border border-white/10 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-white/10"
+									>
+										<div className="p-2 rounded-full bg-primary/10 mb-2">
+											<Icon className="w-5 h-5 text-primary" />
 										</div>
-										<h3>{benefit.title}</h3>
-										<p>{benefit.description}</p>
+										<h3 className="text-base font-semibold text-primary mb-1">
+											{benefit.title}
+										</h3>
+										<p className="text-muted-foreground text-center text-xs">
+											{benefit.description}
+										</p>
 									</div>
 								);
 							})}

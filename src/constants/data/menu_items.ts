@@ -220,12 +220,7 @@ export const menuItems = [
 							description:
 								"Premium telehealth services for individuals and families.",
 							icon: PhoneCall,
-							sublinks: [
-								{
-									label: "Our Health Insurance Plans",
-									href: "/plan/details/our-health-insurance-plan-fam",
-								},
-							],
+							sublinks: [],
 						},
 					],
 				},

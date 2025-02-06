@@ -1,6 +1,6 @@
 "use client";
 
-import { MailOpen, PhoneOutgoing } from "lucide-react";
+import { MailOpen, PhoneOutgoing, Stethoscope } from "lucide-react";
 import { useTypewriter } from "react-simple-typewriter";
 
 import { Button } from "@/components/ui/button";
@@ -27,11 +27,21 @@ const Navbar = () => {
 					&#128400; <span className="hidden md:flex"> {typewriter}</span>
 				</p>
 				<div className="flex space-x-3 justify-center items-center">
-					<Button className="h-6 text-white" variant="ghost">
+					<Button
+						className="h-6 text-white"
+						variant="ghost"
+						onClick={() => (window.location.href = "tel:+12029755013")}
+					>
 						<PhoneOutgoing className="mr-2 h-3 w-3" />
 						<span className="sm:flex hidden text-xs">+1 (202)-975-5013</span>
 					</Button>
-					<Button className="h-6 text-white" variant="ghost">
+					<Button
+						className="h-6 text-white"
+						variant="ghost"
+						onClick={() =>
+							(window.location.href = "mailto:Support@tillahealth.com")
+						}
+					>
 						<MailOpen className="mr-2 h-3 w-3" />
 						<span className="sm:flex hidden text-xs">
 							Support@tillahealth.com
@@ -39,6 +49,7 @@ const Navbar = () => {
 					</Button>
 					<Button className="h-6 text-white" variant="ghost">
 						<Link href="/find-a-provider">
+							<Stethoscope className="mr-2 h-3 w-3 sm:hidden" />
 							<span className="sm:flex hidden text-xs">Find A Provider</span>
 						</Link>
 					</Button>

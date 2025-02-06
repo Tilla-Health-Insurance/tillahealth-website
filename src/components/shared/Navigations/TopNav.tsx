@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import {
@@ -86,55 +86,70 @@ const TopNav = ({ className }: NavigationProps) => {
 	const handleClose = () => {
 		setIsOpen?.(false);
 	};
+	const pathname = usePathname();
+	const isActive = (href: string) => {
+		if (href === "/") {
+			return pathname.endsWith("/home");
+		}
+		return pathname.endsWith(href);
+	};
 	const toggleMenu = () => setIsMenuOpen((prev) => !prev);
 	const MobileMenu = () => (
 		<nav className={cn("flex flex-col h-full", className)}>
 			<div className="flex-1 overflow-y-auto py-4">
 				<div className="space-y-4">
 					{menuItems.map((item, index) => (
-						<div key={index} className="px-4">
+						<div key={index} className="px-2">
 							{item.content ? (
-								<div className="space-y-4">
-									<div className="flex items-center justify-between">
-										<item.icon className="w-5 h-5 mr-2" />
-										<Link
-											onClick={() => setIsOpen(false)}
-											href={item.href || ("#" as any)}
-										>
-											{item.title}
-										</Link>
+								<div className="space-y-2">
+									<div className="flex items-center justify-between p-2 hover:bg-accent rounded-md">
+										<div className="flex items-center flex-1">
+											<item.icon className="w-5 h-5 mr-2" />
+											<Link
+												onClick={() => setIsOpen(false)}
+												href={item.href || ("#" as any)}
+												className={cn(
+													"text-foreground/90 hover:text-primary",
+													isActive(item.href) &&
+														"text-primary after:w-full bg-transparent"
+												)}
+											>
+												{item.title}
+											</Link>
+										</div>
 										<Button
 											variant="ghost"
-											className=" font-medium text-lg"
+											size="sm"
+											className="p-0 hover:bg-transparent"
 											onClick={() => handleToggleSection(index)}
 										>
 											<ChevronDown
 												className={cn(
-													"ml-auto h-5 w-5 transition-transform",
+													"h-5 w-5 transition-transform",
 													openSectionIndex === index && "rotate-180"
 												)}
 											/>
 										</Button>
 									</div>
 									{openSectionIndex === index && (
-										<div className="space-y-6">
+										<div className="space-y-4 ml-4">
 											{item.content.sections.map((section, sectionIndex) => (
-												<div key={sectionIndex} className="ml-7">
-													<h4 className="text-sm font-semibold text-muted-foreground mb-2">
+												<div key={sectionIndex} className="space-y-2">
+													<h4 className="text-sm font-semibold text-muted-foreground px-2">
 														{section.title}
 													</h4>
-													<div className="space-y-2">
+													<div className="space-y-1">
 														{section.links.map((link, linkIndex) => (
 															<div key={linkIndex}>
-																<div className="flex items-center gap-4">
+																<div className="flex items-center">
 																	<Link
 																		href={link.href as any}
-																		className="flex-1 group"
+																		className="flex-1 group p-2 hover:bg-accent rounded-md"
 																		onClick={handleClose}
 																	>
-																		<div className="flex items-center py-2">
-																			<link.icon className="w-5 h-5 text-primary mr-2" />
-																			<span className="font-medium group-hover:text-primary">
+																		<div className="flex items-center">
+																			<link.icon className="w-4 h-4 text-muted-foreground group-hover:text-primary mr-2" />
+																			<span className="text-sm text-foreground/90 group-hover:text-primary">
 																				{link.label}
 																			</span>
 																		</div>
@@ -144,13 +159,10 @@ const TopNav = ({ className }: NavigationProps) => {
 																			<Button
 																				variant="ghost"
 																				size="sm"
-																				className="p-2"
+																				className="p-0 hover:bg-transparent"
 																				onClick={() =>
 																					handleToggleSublinks(linkIndex)
 																				}
-																				aria-expanded={openSublinks.includes(
-																					linkIndex
-																				)}
 																			>
 																				<ChevronDown
 																					className={cn(
@@ -164,13 +176,13 @@ const TopNav = ({ className }: NavigationProps) => {
 																</div>
 																{link.sublinks &&
 																	openSublinks.includes(linkIndex) && (
-																		<ul className="ml-7 space-y-1 mt-1">
+																		<ul className="ml-6 space-y-1 mt-1">
 																			{link.sublinks.map(
 																				(sublink, sublinkIndex) => (
 																					<li key={sublinkIndex}>
 																						<Link
 																							href={sublink.href as any}
-																							className="text-sm text-muted-foreground hover:text-primary block py-1"
+																							className="block py-2 px-2 text-sm text-muted-foreground hover:text-primary hover:bg-accent rounded-md"
 																							onClick={handleClose}
 																						>
 																							{sublink.label}
@@ -191,7 +203,11 @@ const TopNav = ({ className }: NavigationProps) => {
 							) : (
 								<Link
 									href={item.href || ("#" as any)}
-									className="flex items-center py-2 text-primary font-medium hover:text-primary/80"
+									className={cn(
+										"flex items-center p-2 text-foreground/90 hover:text-primary hover:bg-accent rounded-md",
+										isActive(item.href) &&
+											"text-primary after:w-full bg-transparent"
+									)}
 									onClick={handleClose}
 								>
 									<item.icon className="w-5 h-5 mr-2" />

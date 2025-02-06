@@ -3,12 +3,22 @@
 import Image from "next/image";
 
 import { motion } from "framer-motion";
-import { Globe, Heart, Stethoscope, Users, Video } from "lucide-react";
+import {
+	Globe,
+	Heart,
+	Sparkles,
+	Stethoscope,
+	Users,
+	Video,
+} from "lucide-react";
 
 import { TitleUnderLine } from "@/components/shared/Decorations/TitleUnderLine";
 import { FAQ } from "@/components/shared/FAQ/FAQ";
 import { ContactUs } from "@/components/shared/contactUs/contactUs";
 import { Button } from "@/components/ui/button";
+import { ContentCard } from "@/components/ui/custom/contentCard";
+import HowItWorks from "@/components/ui/custom/howItWorks";
+import { MemberStories } from "@/components/ui/custom/memeberStories";
 import { IMAGES } from "@/constants/files";
 
 interface ServiceFeature {
@@ -30,44 +40,50 @@ interface FAQData {
 
 const serviceFeatures: ServiceFeature[] = [
 	{
-		title: "Access to Global Specialists",
+		title: "Access to Renowned USA-Based Specialists",
 		description: [
-			"Gain direct access to renowned USA-based doctors and specialists for advanced consultations in fields like cardiology, oncology, pediatrics, and more",
-			"Benefit from expert second opinions on complex medical cases and treatment plans",
+			"Connect with leading doctors and specialists across various fields such as cardiology, oncology, neurology, and pediatrics",
+			"Receive expert second opinions and advanced treatment recommendations for complex health conditions",
 		],
 		icon: Globe,
 	},
 	{
-		title: "Enhanced Quality of Care",
+		title: "24/7 Virtual Consultations",
 		description: [
-			"Combine the trusted care of Ethiopia's top hospitals and physicians with the precision and advanced diagnostics of USA specialists",
-			"Elevate healthcare standards by leveraging the best of both worlds for better outcomes",
-		],
-		icon: Stethoscope,
-	},
-	{
-		title: "Telemedicine Convenience",
-		description: [
-			"Enjoy 24/7 virtual consultations with USA-based doctors, ensuring timely access to expert care without the need for travel",
-			"Seamlessly manage appointments and medical records through the Tilla Health Member Portal",
+			"Schedule consultations at your convenience, anytime, anywhere",
+			"High-quality, secure video conferencing ensures a seamless telemedicine experience",
 		],
 		icon: Video,
 	},
 	{
-		title: "Comprehensive Support",
+		title: "Integrated Local Support",
 		description: [
-			"Access personalized guidance on navigating healthcare options in both Ethiopia and the USA",
-			"Receive tailored advice and care plans that address your unique needs",
+			"In addition to global expertise, Tilla Health's local network provides access to top hospitals and specialists within Ethiopia for follow-up care",
+			"Members can easily transition between local and international healthcare services",
+		],
+		icon: Users,
+	},
+	{
+		title: "Comprehensive Medical Records Access",
+		description: [
+			"Centralized access to medical records through the Tilla Health Member Portal",
+			"Share medical histories, test results, and imaging files with USA-based specialists for a more personalized consultation",
 		],
 		icon: Heart,
 	},
 	{
-		title: "Seamless Integration with Local Services",
+		title: "Multilingual Support",
 		description: [
-			"In addition to services from local hospitals and doctors, BridgeCare USA ensures members receive additional specialized care for conditions that require global expertise",
-			"Your health journey is supported at every step, both locally and internationally",
+			"Bridge language barriers with interpretation services for consultations in both Amharic and English",
 		],
-		icon: Users,
+		icon: Globe,
+	},
+	{
+		title: "Specialized Telemedicine Services",
+		description: [
+			"Chronic disease management, prenatal and postnatal care, mental health services, and more tailored to members' specific needs",
+		],
+		icon: Stethoscope,
 	},
 ];
 
@@ -77,12 +93,6 @@ const testimonials: Testimonial[] = [
 			"As someone living outside Addis Ababa, Tilla Health's coordinated transportation and access to top city hospitals has been invaluable for my family's healthcare needs.",
 		author: "Abebe K.",
 		role: "Rural Member",
-	},
-	{
-		quote:
-			"The ability to get second opinions from USA specialists while working with local doctors gave us confidence in our treatment decisions.",
-		author: "Sarah M.",
-		role: "Family Member",
 	},
 	{
 		quote:
@@ -147,14 +157,14 @@ export default function BridgecareScreen() {
 				{/* Background Effects */}
 				<div className="absolute inset-0">
 					<Image
-						src={IMAGES.telehealth}
-						alt="Telehealth Consultation"
+						src={IMAGES.bridgeCare}
+						alt="BridgeCare USA"
 						fill
 						className="object-cover object-center scale-105 transform hover:scale-110 transition-transform duration-1000"
 						priority
 					/>
-					<div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
-					<div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/10 to-black/40" />
+					<div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
+					<div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/20 to-black/50" />
 
 					{/* Animated decorative element */}
 					<motion.div
@@ -226,6 +236,15 @@ export default function BridgecareScreen() {
 				</div>
 			</section>
 
+			{/* Vision Statement Section */}
+			<ContentCard
+				title="BridgeCare USA is a premium telemedicine service that bridges the gap between Ethiopia and the USA's world-class healthcare expertise. "
+				description="This innovative solution combines advanced telemedicine technology with the support of Tilla Health's comprehensive local healthcare network, ensuring members have access to the best medical care both locally and internationally."
+				imageSrc={IMAGES.portal}
+				imageAlt="BridgeCare USA"
+				highlights={[]}
+			/>
+
 			{/* Features Section - Modern Card Design */}
 			<section className="py-24 lg:py-32 relative">
 				<div className="container relative z-10 mx-auto px-6">
@@ -236,7 +255,7 @@ export default function BridgecareScreen() {
 						viewport={{ once: true }}
 					>
 						<h2 className="text-4xl md:text-5xl font-bold relative inline-block">
-							Key Benefits
+							Key Features
 							<TitleUnderLine />
 						</h2>
 						<p className="mt-6 text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -256,41 +275,74 @@ export default function BridgecareScreen() {
 								className="group"
 							>
 								<div
-									className="relative bg-card rounded-xl p-6 shadow-[0_2px_8px_rgba(0,0,0,0.08)] 
-											  hover:shadow-[0_4px_16px_rgba(0,0,0,0.12)] transition-all duration-300 
-											  hover:-translate-y-1 h-full border border-border/50"
+									className="relative bg-gradient-to-br from-background via-card to-background rounded-2xl p-8 
+											  shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.12)] 
+											  transition-all duration-500 hover:-translate-y-1 h-full border border-border/50
+											  overflow-hidden"
 								>
-									{/* Icon */}
-									<div className="mb-6">
-										<div
-											className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center 
-												 transform-gpu transition-all duration-300 ease-out
-												 group-hover:bg-primary/15"
-										>
-											<feature.icon className="w-6 h-6 text-primary" />
-										</div>
-									</div>
-									{/* Content */}
+									{/* Animated gradient background */}
+									<div
+										className="absolute inset-0 bg-gradient-to-r from-primary/5 via-primary/10 to-primary/5 
+												  opacity-0 group-hover:opacity-100 transition-opacity duration-500 
+												  blur-xl -z-10"
+									/>
 
+									{/* Decorative elements */}
+									<div
+										className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 
+												  to-transparent rounded-full blur-3xl -z-10 opacity-0 group-hover:opacity-100 
+												  transition-opacity duration-500"
+									/>
+
+									{/* Icon */}
+									<div className="mb-8 relative">
+										<div
+											className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-primary/5 
+													  flex items-center justify-center transform-gpu transition-all duration-500 
+													  ease-out group-hover:scale-110 group-hover:rotate-3"
+										>
+											<feature.icon
+												className="w-8 h-8 text-primary transform transition-all duration-500 
+																  group-hover:scale-110"
+											/>
+										</div>
+										{/* Decorative ring */}
+										<div
+											className="absolute inset-0 border-2 border-primary/20 rounded-2xl scale-0 
+														  group-hover:scale-100 transition-transform duration-500 ease-out"
+										/>
+									</div>
+
+									{/* Content */}
 									<div className="space-y-4">
 										<h3
-											className="text-lg font-semibold tracking-tight text-foreground/90
-             group-hover:text-primary transition-colors duration-300"
+											className="text-xl font-semibold tracking-tight text-foreground/90
+													 group-hover:text-primary transition-colors duration-300"
 										>
 											{feature.title}
 										</h3>
 
-										<ul className="space-y-3 list-disc list-inside marker:text-primary">
+										<ul className="space-y-3">
 											{feature.description.map((desc, i) => (
 												<li
 													key={i}
-													className="text-sm text-muted-foreground group-hover/item:text-muted-foreground/80 leading-relaxed transition-colors duration-300"
+													className="flex items-start space-x-3 text-muted-foreground 
+																 group-hover:text-foreground/80 transition-colors duration-300"
 												>
-													{desc}
+													<span className="w-1.5 h-1.5 mt-2 rounded-full bg-primary/70 flex-shrink-0" />
+													<span className="text-sm leading-relaxed">
+														{desc}
+													</span>
 												</li>
 											))}
 										</ul>
 									</div>
+
+									{/* Bottom accent line */}
+									<div
+										className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-primary/50 to-primary/20 
+												  w-0 group-hover:w-full transition-all duration-500 ease-out"
+									/>
 								</div>
 							</motion.div>
 						))}
@@ -384,148 +436,84 @@ export default function BridgecareScreen() {
 					</div>
 				</div>
 			</section>
-
-			{/* How It Works Section */}
-			<section className="py-12 lg:py-22 relative bg-primary text-white">
-				{/* Background decorative elements */}
-				<div className="absolute inset-0 overflow-hidden">
-					<motion.div
-						className="absolute top-0 left-0 w-[800px] h-[800px] bg-white/5 rounded-full blur-3xl"
-						animate={{
-							scale: [1, 1.2, 1],
-							x: [-200, 0, -200],
-							opacity: [0.1, 0.15, 0.1],
-						}}
-						transition={{
-							duration: 15,
-							repeat: Infinity,
-							repeatType: "reverse",
-						}}
-					/>
+			<HowItWorks steps={howItWorksSteps} />
+			<section className="py-24 relative overflow-hidden">
+				<div className="absolute inset-0">
+					<div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/90" />
+					<div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_100%_200px,rgba(var(--primary-rgb),0.1),transparent)]" />
 				</div>
 
-				<div className="container mx-auto px-4 relative z-10">
-					<motion.div
-						className="text-center mb-20"
-						initial={{ opacity: 0, y: 20 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true }}
-					>
-						<h2 className="text-4xl md:text-5xl font-bold relative inline-block text-white">
-							How It Works
-							<TitleUnderLine width="20%" className="bg-white" />
-						</h2>
-						<p className="mt-6 text-xl text-white/80 max-w-3xl mx-auto">
-							Get started with our telemedicine service in four simple steps
-						</p>
-					</motion.div>
-
-					<div className="relative max-w-5xl mx-auto">
-						<div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-							{howItWorksSteps.map((step, index) => (
-								<motion.div
-									key={step.title}
-									className="relative h-full"
-									initial={{ opacity: 0, y: 20 }}
-									whileInView={{ opacity: 1, y: 0 }}
-									viewport={{ once: true }}
-									transition={{ delay: index * 0.2 }}
-								>
-									<div className="flex flex-col items-center text-center group p-6 rounded-2xl bg-white/20 backdrop-blur-md border border-white/20 hover:border-white/40 transition-all duration-300 hover:shadow-lg hover:shadow-white/5 h-full">
-										<div className="relative">
-											<div className="w-16 h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center mb-4 transform transition-all duration-300 group-hover:scale-110 group-hover:rotate-3">
-												<step.icon className="w-8 h-8 text-white transform transition-all duration-300 group-hover:scale-110" />
-											</div>
-											<div className="absolute -top-2 -right-2 w-6 h-6 bg-white text-primary rounded-full flex items-center justify-center text-sm font-bold shadow-lg">
-												{index + 1}
-											</div>
-										</div>
-										<h3 className="text-lg font-semibold mb-2 text-white group-hover:text-white/90 transition-colors duration-300">
-											{step.title}
-										</h3>
-										<p className="text-sm text-white/80 leading-relaxed">
-											{step.description}
-										</p>
-
-										{/* {index < howItWorksSteps.length - 1 && (
-											<ArrowRight className="hidden lg:block absolute -right-3 top-1/2 text-white/70 w-6 h-6 transform -translate-y-1/2 animate-pulse" />
-										)} */}
-									</div>
-								</motion.div>
-							))}
-						</div>
-					</div>
-				</div>
-			</section>
-
-			{/* Testimonials Section */}
-			<section className="py-24 lg:py-32 relative">
-				<div className="container mx-auto px-4">
+				<div className="container mx-auto px-4 relative">
 					<motion.div
 						className="text-center mb-16"
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
 						viewport={{ once: true }}
 					>
-						<h2 className="text-4xl md:text-5xl font-bold relative inline-block">
-							Member Stories
-							<TitleUnderLine />
+						<h2 className="text-4xl md:text-5xl font-bold">
+							Why Choose BridgeCare USA?
+							<TitleUnderLine width="20%" />
 						</h2>
-						<p className="mt-6 text-xl text-muted-foreground max-w-3xl mx-auto">
-							Real experiences from our members
-						</p>
 					</motion.div>
 
-					<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-						{testimonials.map((testimonial, index) => (
+					<div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+						{[
+							{
+								title: "Global Expertise at Your Fingertips",
+								description:
+									"Gain access to renowned healthcare professionals in the USA without leaving Ethiopia.",
+								icon: Globe,
+							},
+							{
+								title: "Convenient and Cost-Effective",
+								description:
+									"Save time and money by eliminating the need for international travel while receiving world-class medical advice.",
+								icon: Sparkles,
+							},
+							{
+								title: "Seamless Local and International Care",
+								description:
+									"Enjoy an integrated healthcare journey, supported by local providers and international specialists.",
+								icon: Users,
+							},
+						].map((item, index) => (
 							<motion.div
-								key={index}
-								className="group relative bg-card hover:bg-gradient-to-br from-primary/5 via-background to-transparent rounded-3xl p-8 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5"
+								key={item.title}
 								initial={{ opacity: 0, y: 20 }}
 								whileInView={{ opacity: 1, y: 0 }}
 								viewport={{ once: true }}
 								transition={{ delay: index * 0.2 }}
+								className="group"
 							>
-								{/* Decorative elements */}
-								<div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-primary/10 to-transparent rounded-tr-3xl rounded-bl-full -z-10" />
-								<div className="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-primary/10 to-transparent rounded-bl-3xl rounded-tr-full -z-10" />
-
-								{/* Quote icon */}
-								<div className="mb-6">
-									<div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center transform -rotate-6 group-hover:rotate-0 transition-transform duration-300">
-										<Heart className="w-6 h-6 text-primary" />
+								<div
+									className="bg-background/50 backdrop-blur-sm rounded-xl p-8 border border-border/50 
+												hover:border-primary/20 transition-all duration-300 h-full 
+												hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:-translate-y-1"
+								>
+									<div className="relative mb-6">
+										<div
+											className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center 
+													transform-gpu transition-all duration-300 group-hover:scale-110 group-hover:bg-primary/15"
+										>
+											<item.icon className="w-7 h-7 text-primary" />
+										</div>
+										<div className="absolute -right-1 -top-1 w-3 h-3 rounded-full bg-primary/20" />
 									</div>
-								</div>
 
-								{/* Quote content */}
-								<blockquote className="relative mb-6">
-									<p className="text-lg leading-relaxed italic text-foreground/90">
-										&quot;{testimonial.quote}&quot;
+									<h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors duration-300">
+										{item.title}
+									</h3>
+									<p className="text-muted-foreground leading-relaxed">
+										{item.description}
 									</p>
-								</blockquote>
-
-								{/* Author info */}
-								<div className="flex items-center mt-8 pt-6 border-t border-primary/10">
-									<div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center mr-4">
-										<Users className="w-6 h-6 text-primary" />
-									</div>
-									<div>
-										<div className="font-semibold text-foreground">
-											{testimonial.author}
-										</div>
-										<div className="text-sm text-muted-foreground">
-											{testimonial.role}
-										</div>
-									</div>
 								</div>
-
-								{/* Hover effect border */}
-								<div className="absolute inset-0 border border-primary/10 rounded-3xl group-hover:border-primary/20 transition-colors duration-300" />
 							</motion.div>
 						))}
 					</div>
 				</div>
 			</section>
+
+			<MemberStories testimonials={testimonials} />
 
 			<FAQ faqs={faqs} />
 

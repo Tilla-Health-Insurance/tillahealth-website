@@ -378,7 +378,7 @@ export default function HeroSlider() {
 									animate={{ opacity: 1, x: 0 }}
 									exit={{ opacity: 0, x: 20 }}
 									transition={{ duration: 0.5 }}
-									className="backdrop-blur-xs bg-red-600/40 rounded-3xl p-8 md:p-10 border border-white/10 shadow-2xl relative overflow-hidden"
+									className="backdrop-blur-xs bg-[#132b3f]/80 rounded-3xl p-8 md:p-10 border border-white/10 shadow-2xl relative overflow-hidden"
 									ref={(el) => {
 										if (el) {
 											contentRefs.current[currentIndex] = el;
@@ -386,8 +386,8 @@ export default function HeroSlider() {
 									}}
 								>
 									{/* Decorative elements */}
-									<div className="absolute top-0 right-0 w-32 h-32 bg-red-400/30 rounded-full blur-3xl -mr-16 -mt-16" />
-									<div className="absolute bottom-0 left-0 w-24 h-24 bg-red-400/30 rounded-full blur-2xl -ml-12 -mb-12" />
+									<div className="absolute top-0 right-0 w-32 h-32 bg-primary/30 rounded-full blur-3xl -mr-16 -mt-16" />
+									<div className="absolute bottom-0 left-0 w-24 h-24 bg-primary/30 rounded-full blur-2xl -ml-12 -mb-12" />
 
 									<motion.h1
 										className="text-4xl md:text-4xl lg:text-5xl font-bold text-white mb-8 leading-tight"

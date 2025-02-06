@@ -9,6 +9,7 @@ import ngoHero from "../../public/images/WhatsApp Image 2025-01-23 at 9.50.34 AM
 import abayHospital from "../../public/images/abay.jpeg";
 import blackLion from "../../public/images/blackLion.png";
 import logoredtransparent from "../../public/images/bold-logo.png";
+import bridgeCare from "../../public/images/bridgecare.png";
 import brokerportal from "../../public/images/brokerportal.jpeg";
 import careLandHospital from "../../public/images/careland.jpeg";
 import comfort from "../../public/images/comfort.png";
@@ -28,6 +29,7 @@ import individual from "../../public/images/individual.jpeg";
 import internationalGlob from "../../public/images/internationalGlobe.png";
 import logobluetransparent from "../../public/images/logo-blue.png";
 import logoredicon from "../../public/images/logo-icon.png";
+import medicalPattern from "../../public/images/medical-pattern.png";
 import memberportal from "../../public/images/memberportal.jpeg";
 import mohLogo from "../../public/images/moh.png";
 import bg from "../../public/images/new.png";
@@ -50,6 +52,10 @@ import semahHospital from "../../public/images/semah.jpeg";
 import socialres2 from "../../public/images/socialres2.jpg";
 import socialres3 from "../../public/images/socialres.png";
 import telehealth from "../../public/images/telehealth.jpeg";
+import telemedicine from "../../public/images/telemedicine.png";
+import tillaRedLine2 from "../../public/images/tillaRedLine2.svg";
+import tillaRedLine from "../../public/images/tillaRedLine.svg";
+import tillaLine from "../../public/images/tillaline.png";
 import mobile from "../../public/images/transparent.png";
 import transport2 from "../../public/images/transport2.jpg";
 import transport from "../../public/images/transport.jpeg";
@@ -126,4 +132,10 @@ export const IMAGES = Object.freeze({
 	umbrella: umbrella,
 	comfort: comfort,
 	dreden: dreden,
+	telemedicine: telemedicine,
+	medicalPattern: medicalPattern,
+	bridgeCare: bridgeCare,
+	tillaLine: tillaLine,
+	tillaRedLine: tillaRedLine,
+	tillaRedLine2: tillaRedLine2,
 });

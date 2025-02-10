@@ -6,7 +6,7 @@ import { IMAGES } from "@/constants/files";
 
 const plans = [
 	{
-		name: "Basic Care",
+		name: "Basic Plan",
 		services: [
 			"Doctor's Consultation",
 			"Hemogram",

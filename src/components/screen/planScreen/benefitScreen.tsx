@@ -1,12 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { useRef } from "react";
 
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import BenefitsSection from "@/components/module/Benefitscard";
-import { IMAGES } from "@/constants/files";
 
 interface Plan {
 	title: string;
@@ -73,61 +71,24 @@ export default function BenefitsPage({ details }: PlanProps) {
 	return (
 		<div ref={containerRef} className="min-h-screen relative overflow-x-hidden">
 			<main className="min-h-screen relative isolate overflow-hidden">
-				{/* Animated Background */}
-				<motion.div
-					className="fixed inset-0 -z-10"
-					initial={{ scale: 1.1 }}
-					animate={{
-						scale: [1.1, 1.15, 1.1],
-					}}
-					transition={{
-						duration: 20,
-						repeat: Infinity,
-						repeatType: "reverse",
-						ease: "linear",
-					}}
-				>
-					<Image
-						src={IMAGES.bg}
-						alt="Background"
-						fill
-						className="object-cover"
-						priority
-					/>
-					<div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/80 to-background/95" />
-				</motion.div>
-
 				{/* Content */}
 				<div className="relative z-10">
-					<div className="absolute inset-0 -z-10">
-						<div className="absolute inset-0 opacity-95" />
-						<div
-							className="absolute inset-0 opacity-[0.15]"
-							style={{
-								backgroundImage:
-									"radial-gradient(circle at 1px 1px, white 1px, transparent 0)",
-								backgroundSize: "40px 40px",
-							}}
-						/>
-						<div className="absolute inset-0 bg-gradient-to-b from-primary/50 to-primary/95" />
-					</div>
-
 					{/* Hero Section */}
 					<motion.div
-						className="min-h-[60vh] flex items-center relative overflow-hidden"
+						className="min-h-[60vh] flex bg-primary items-center justify-center"
 						style={{ y, opacity }}
 					>
-						<div className="max-w-7xl mx-auto px-6 py-24 w-full">
+						<div className="max-w-7xl mx-auto px-6 py-24 w-full flex justify-center">
 							<motion.div
 								initial={{ opacity: 0, y: 20 }}
 								animate={{ opacity: 1, y: 0 }}
 								transition={{ duration: 0.8 }}
 								className="max-w-3xl"
 							>
-								<h1 className="text-3xl md:text-4xl font-bold mb-6 bg-clip-text  bg-gradient-to-r">
+								<h1 className="text-3xl md:text-4xl font-bold mb-6 text-white text-center">
 									{details.title}
 								</h1>
-								<p className="text-md md:text-lg  leading-relaxed">
+								<p className="text-md md:text-lg leading-relaxed text-white text-center">
 									{details.desc}
 								</p>
 							</motion.div>
@@ -135,15 +96,7 @@ export default function BenefitsPage({ details }: PlanProps) {
 					</motion.div>
 
 					{/* Benefits Sections */}
-					<div className="relative">
-						<div
-							className="absolute inset-0 opacity-30"
-							style={{
-								backgroundImage: `linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
-                               linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)`,
-								backgroundSize: "20px 20px",
-							}}
-						/>
+					<div className="mt-12">
 						<div className="max-w-7xl mx-auto px-6 md:py-4 relative">
 							<div className="grid grid-cols-1 md:grid-cols-2 gap-12">
 								{details.sections?.map((section, index) => (

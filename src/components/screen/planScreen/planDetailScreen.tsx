@@ -150,8 +150,8 @@ export default function PlanDetailScreen({ details }: PlanProps) {
 			<main>
 				<section className="bg-primary text-white flex flex-col md:flex-row items-center justify-center h-[20rem]">
 					{/* <HeroHighlight className="flex flex-col md:flex-row items-center justify-center h-[30rem]"> */}
-					<div className="container text-center  ">
-						<h1 className="text-4xl md:text-6xl font-bold mb-12">
+					<div className="container text-center mt-10 sm:mt-20 ">
+						<h1 className="text-2xl sm:text-2xl md:text-4xl font-bold mb-12 max-w-5xl mx-auto">
 							{details.title}
 						</h1>
 					</div>
@@ -186,7 +186,7 @@ export default function PlanDetailScreen({ details }: PlanProps) {
 								<HealthConnectSection
 									healthConnectData={details.healthConnectData}
 								/>
-								<section className="py-16 bg-gray-50">
+								<section className="py-16 ">
 									<div className="container text-center">
 										<h2 className="text-3xl font-bold mb-8">Benefits</h2>
 										<p className="text-muted-foreground  mb-8">

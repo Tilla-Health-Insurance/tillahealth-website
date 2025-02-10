@@ -1,10 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { ContentCard } from "@/components/ui/custom/contentCard";
+import { IMAGES } from "@/constants/files";
 
 const plans = [
 	{
-		name: "Primary Care",
+		name: "Basic Care",
 		services: [
 			"Doctor's Consultation",
 			"Hemogram",
@@ -79,8 +81,8 @@ export default function WellnessPage() {
 
 			{/* Hero Section */}
 			<section className="bg-primary text-white py-16">
-				<div className="container mx-auto px-4 text-center">
-					<h1 className="text-4xl md:text-5xl font-bold mb-8">
+				<div className="container mx-auto px-4 text-center mt-10">
+					<h1 className="text-3xl md:text-4xl font-bold mb-8">
 						TILLA HEALTH INSURANCE
 						<br />
 						WELLNESS CHECK-UP PACKAGE
@@ -93,19 +95,25 @@ export default function WellnessPage() {
 						health. These packages cater to diverse health needs, ensuring
 						comprehensive care for every stage of life.
 					</p>
-					<p className="max-w-3xl mx-auto mt-4 text-lg">
-						With Tilla Health`&apos;s Wellness Packages, you gain access to
-						personalized check-ups, detailed diagnostics, and expert
-						consultations, all aimed at promoting better health outcomes.
-						Whether you`&apos;re looking for basic preventive care or a full
-						suite of advanced diagnostics, we have the perfect plan for you and
-						your loved ones.
-					</p>
+					<p className="max-w-3xl mx-auto mt-4 text-lg"></p>
 				</div>
 			</section>
 
+			<ContentCard
+				description="you gain access to
+						personalized check-ups, detailed diagnostics, and expert
+						consultations, all aimed at promoting better health outcomes.
+						Whether you`'re looking for basic preventive care or a full
+						suite of advanced diagnostics, we have the perfect plan for you and
+						your loved ones."
+				imageSrc={IMAGES.diasporaconnect1}
+				imageAlt="Wellness Check-up Packages"
+				title="With Tilla Health's Wellness Packages,"
+				highlights={[]}
+			/>
+
 			{/* Comparison Table */}
-			<section className="py-16 bg-gray-50">
+			<section className="py-16 md:px-16">
 				<div className="container mx-auto px-4">
 					<h2 className="text-3xl font-bold text-center mb-12">
 						Tilla Health Insurance Wellness Check-up Package
@@ -117,7 +125,7 @@ export default function WellnessPage() {
 									{plans.map((plan) => (
 										<th
 											key={plan.name}
-											className="bg-[#C8102E] text-white p-4 text-left"
+											className="bg-primary text-white p-4 text-left"
 										>
 											{plan.name}
 										</th>
@@ -130,7 +138,7 @@ export default function WellnessPage() {
 								}).map((_, index) => (
 									<tr
 										key={index}
-										className={index % 2 === 0 ? "bg-white" : "bg-gray-100"}
+										className={index % 2 === 0 ? "bg-background" : "bg-muted"}
 									>
 										{plans.map((plan) => (
 											<td
